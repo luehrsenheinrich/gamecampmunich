@@ -1,0 +1,163 @@
+body.page-template-page-twitwall-php {
+	overflow: hidden;
+
+	.headwrapper .headnavi,
+	.headwrapper .facebookbutton,
+	.headwrapper .twitterbutton {
+		display: none;
+	}
+	
+	header {
+		height: 110px;
+		
+		.headwrapper {
+			height: 95px;
+			padding-top: 15px;
+			
+			#uhr {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				color: #fff;
+				right: -80px;
+				line-height: 110px;
+				vertical-align: middle;
+				font-size: 2em;
+				font-weight: 600;
+			}
+		}
+	}
+	
+	#main {
+		position: relative; 
+		
+		.faces_left {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 144px;
+		}
+		
+		.faces_right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 144px;
+			
+			img {
+				float: right;
+			}
+		}
+		
+	}
+	
+	#content {
+		min-height: 500px;
+	
+		#sponsoren {
+			width: 260px;
+			position: absolute;
+			top: 0;
+			left: -160px;
+			.white-box();
+			
+			img {
+				margin: 20px 0;
+			}
+		}
+		
+		.sp_right {
+			left: auto !important;
+			right: -160px;
+			
+			h2 {
+				font-size: 1em;
+				color: @grey;
+			}
+			
+			.session {
+				margin: 0 0 10px 0;
+				
+				.title {
+					text-align: left;
+					border-bottom: 1px solid #ccc;
+					font-size: 0.75em;
+					line-height: 1.333em;
+					font-weight: 600;
+				}
+				
+				.meta {
+					display: block;
+					color: @grey;
+					font-size: 0.75em;
+					line-height: 1.333em;
+				
+					.room {
+						float: left;
+					}
+					
+					.start {
+						float: right;
+					}
+				}
+			}
+			
+		}
+	}
+	
+	#twitter_wall {
+		
+		.tweet {
+				text-align: left;
+				background: #FFF;
+				border-radius: 10px;
+				.box-shadow(0 1px 2px #999);
+				padding: 15px 20px;
+				width: 500px;
+				margin: 0 auto 30px;
+				position: relative;
+				
+				.author {
+					font-weight: 600;
+					margin: 0 0 10px 0;
+					
+					span.twitter_nick {
+						font-size: 0.75em;
+						color: @grey;
+						display: inline-block;
+						margin: 0 0 0 10px;
+					}
+					
+					span.date {
+						font-size: 0.75em;
+						color: @grey;
+						display: inline-block;
+						float: right;
+					}
+				}
+				
+				.avatar {
+					position: absolute;
+					top: 0;
+					left: -70px;
+					padding: 7px;
+					background: #fff;
+					border-radius: 10px;
+					.box-shadow(0 1px 2px #999);
+					
+					img {
+						border-radius: 5px;
+					}
+				}
+		}
+		
+		.alt {
+			
+			.avatar {
+				left: auto;
+				right: -70px;
+			}
+		}
+		
+	}
+}
