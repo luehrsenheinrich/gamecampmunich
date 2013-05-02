@@ -1,4 +1,5 @@
 .htaccess
+.ssh/
 wp-config.php
 wp-content/uploads/
 wp-content/blogs.dir/
@@ -6,9 +7,22 @@ wp-content/upgrade/
 wp-content/backup-db/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
+wp-content/gallery/
+wp-content/gamesdb_packshots/
 sitemap.xml
 *.log
+*.cache
 wp-content/cache/
 wp-content/backups/
 sitemap.xml
 sitemap.xml.gz
+.DS_Store
+*.DS_Store
+wp-content/themes/gcmuc/style_kgaming.css
+wp-content/themes/gcmuc/editor-style.css
+wp-content/plugins/*
+wp-admin/*
+wp-includes/*
+
+# Add the files back in, that we're actually editing
+!wp-content/plugins/lh-sessions
