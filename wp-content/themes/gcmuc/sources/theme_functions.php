@@ -108,13 +108,13 @@ function remove_footer_admin () {
 }
 
 function change_dashboard_primary_title () {
-  return "Luehrsen // Heinrich";
+  return "Krautgaming";
 }
 function change_dashboard_primary_feed() {
-  return "http://www.luehrsen-heinrich.de/feed/";
+  return "http://de.krautgaming.com/feed/";
 }
 function change_dashboard_primary_link() {
-  return "http://www.luehrsen-heinrich.de/";
+  return "http://de.krautgaming.com/";
 }
 
 function change_dashboard_secondary_title () {
