@@ -9,7 +9,14 @@ get_header(); ?>
 
 	<div class="sponsoren">
     	<p>Das GameCamp Munich 2013 wird unterstützt von</p>
-        <p><a href="/sponsoring">Jetzt Sponsor werden</a></p>
+    	<p>
+    		<a href="http://www.microsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/microsoft.jpg" alt="Microsoft"></a>
+    		<a href="http://www.travian.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/travian.jpg" alt="Travian Games"></a>
+    		<a href="http://www.cipsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/cipsoft.jpg" alt="Cipsoft"></a>
+    	</p>
+        <p>
+        	<a href="/sponsoring">Jetzt Sponsor werden</a>
+        </p>
     </div>
     
      <?php while( have_posts() ) : the_post(); ?>

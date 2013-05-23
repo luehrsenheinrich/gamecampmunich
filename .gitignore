@@ -27,3 +27,4 @@ wp-includes/*
 
 # Add the files back in, that we're actually editing
 !wp-content/plugins/lh-sessions
+wp-content/themes/gcmuc/style_less.css
