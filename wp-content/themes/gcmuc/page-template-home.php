@@ -13,8 +13,8 @@ get_header(); ?>
     		<a href="http://www.microsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/microsoft.jpg" alt="Microsoft"></a>
     		<a href="http://www.travian.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/travian.jpg" alt="Travian Games"></a>
     		<a href="http://www.cipsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/cipsoft.png" alt="Cipsoft"></a>
-    		<a href="http://www.cipsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/sae.png" alt="Cipsoft"></a>
-    		<a href="http://www.cipsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/mdh.png" alt="Cipsoft"></a>
+    		<a href="http://muenchen.sae.edu/de/home/" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/sae.png" alt="SAE Institute"></a>
+    		<a href="http://www.mediadesign.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/mdh.png" alt="Mediadesign Hochschule"></a>
 
     	</p>
         <p>
