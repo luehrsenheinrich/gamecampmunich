@@ -15,6 +15,7 @@ get_header(); ?>
     		<a href="http://www.cipsoft.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/cipsoft.png" alt="Cipsoft"></a>
     		<a href="http://muenchen.sae.edu/de/home/" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/sae.png" alt="SAE Institute"></a>
     		<a href="http://www.mediadesign.de" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/mdh.png" alt="Mediadesign Hochschule"></a>
+      		<a href="http://www.ravensburger-games.com" target="_blank"><img src="<?=WP_THEME_URL?>/img/sponsoren/ravensburger.jpg" alt="Ravensburger Digital"></a>
 
     	</p>
         <p>
