@@ -11,13 +11,13 @@ get_header(); ?>
 
 	<div id="sponsoren">
         
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/gamesbavaria.jpg" alt="Games/Bavaria">
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/microsoft.jpg" alt="Microsoft">
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/travian.jpg" alt="Travian Games">
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/cipsoft.png" alt="Cipsoft">
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/sae.png" alt="SAE Institute">
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/mdh.png" alt="Mediadesign Hochschule">
-<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/ravensburger.jpg" alt="Ravensburger Digital">
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/gamesbavaria.jpg" alt="Games/Bavaria">	<br />
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/microsoft.jpg" alt="Microsoft">	<br />
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/travian.jpg" alt="Travian Games">	<br />
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/cipsoft.png" alt="Cipsoft">	<br />
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/sae.png" alt="SAE Institute">	<br />
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/mdh.png" alt="Mediadesign Hochschule">	<br />
+<img src="http://www.gamecampmunich.de/wp-content/themes/gcmuc/img/sponsoren/ravensburger.jpg" alt="Ravensburger Digital">	<br />
 
     </div>
 

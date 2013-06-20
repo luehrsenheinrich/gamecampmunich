@@ -1,6 +1,6 @@
 /* Twitter Wall Script, handcraftet and arschgeklöppelt for the Gamecamp Munich */
 
-var twitter_json_search = "http://search.twitter.com/search.json";
+var twitter_json_search = "https://api.twitter.com/1.1/search/tweets.json";
 var search_term = "#gcmuc";
 var refresh_url = null;
 var n = 1;
