@@ -14,6 +14,6 @@ $public_base = max($directory_array);
 
 define('CONSUMER_KEY', 'Xn9ZsjwjJtjBaReEMX1veg');
 define('CONSUMER_SECRET', 'AEcHkzrNz2vNvayBYzW4gaVUfdMKlqOxlT74YZueN0');
-define('OAUTH_CALLBACK', $public_base."/callback.php");
+define('OAUTH_CALLBACK', $public_directory."/callback.php");
 
 var_dump(OAUTH_CALLBACK);
