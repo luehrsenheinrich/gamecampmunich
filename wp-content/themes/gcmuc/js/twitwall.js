@@ -1,6 +1,6 @@
 /* Twitter Wall Script, handcraftet and arschgeklöppelt for the Gamecamp Munich */
 
-var twitter_json_search = "https://api.twitter.com/1.1/search/tweets.json";
+var twitter_json_search = "/wp-content/themes/gcmuc/twitter/gcmuc_search.php";
 var search_term = "#gcmuc";
 var refresh_url = null;
 var n = 1;
@@ -18,16 +18,21 @@ function init(){
 	jQuery("#main").prepend(faces_right);
 	
 	var jqXHR = jQuery.getJSON(twitter_json_search+"?callback=?", {q: search_term}, function(data, textStatus, xhr){
-		if(textStatus == "success"){
-			data.results.reverse();
-			refresh_url = data.refresh_url;
-			jQuery(data.results).each(function(index, element) {
+		console.log(data);
+		if(textStatus == "success" && data.statuses.length > 0){
+			data.statuses.reverse();
+			refresh_url = data.search_metadata.refresh_url;
+			jQuery(data.statuses).each(function(index, element) {
                 post_to_wall(element, index);
             });
 			
 			setInterval(function(){ get_more_tweets() }, 5000);
 		}
 	});
+	
+	jqXHR.error(function(data){
+		console.log(data);
+	})
 }
 
 function post_to_wall(element, index){
@@ -51,14 +56,14 @@ function post_to_wall(element, index){
 	
 	n++;
 	
-		html +=	'<div class="author">'+element.from_user_name+'<span class="twitter_nick">@'+element.from_user+'</span><span class="date">'+tweet_date_print+' Uhr</span></div>';
+		html +=	'<div class="author">'+element.user.name+'<span class="twitter_nick">@'+element.user.screen_name+'</span><span class="date">'+tweet_date_print+' Uhr</span></div>';
 		html += '<div class="message">'+element.text+'</div>';
-		html += '<div class="avatar"><img src="'+element.profile_image_url+'" /></div>';
+		html += '<div class="avatar"><img src="'+element.user.profile_image_url+'" /></div>';
 		html += '</div>';
 		
 	jQuery(html).hide().prependTo("#twitter_wall").slideDown(1000);
 	
-	var faces = '<img src="'+element.profile_image_url+'" />';
+	var faces = '<img src="'+element.user.profile_image_url+'" />';
 	
 	jQuery(".faces_left").prepend(faces);
 	jQuery(".faces_right").prepend(faces);
@@ -69,11 +74,11 @@ function get_more_tweets(){
 
 	if(refresh_url != null){
 		var jqXHR = jQuery.getJSON(twitter_json_search+refresh_url+"&callback=?", null, function(data, textStatus, xhr){
-
-			if(textStatus == "success" && refresh_url != data.refresh_url){
-				data.results.reverse();
-				refresh_url = data.refresh_url;
-				jQuery(data.results).each(function(index, element) {
+			console.log(data);
+			if(textStatus == "success" && refresh_url != data.search_metadata.refresh_url){
+				data.statuses.reverse();
+				refresh_url = data.search_metadata.refresh_url;
+				jQuery(data.statuses).each(function(index, element) {
 					post_to_wall(element, index);
 				});
 			}
