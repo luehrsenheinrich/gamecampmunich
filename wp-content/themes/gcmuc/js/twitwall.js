@@ -26,7 +26,7 @@ function init(){
                 post_to_wall(element, index);
             });
 			
-			setInterval(function(){ get_more_tweets() }, 5000);
+			setInterval(function(){ get_more_tweets() }, 30000);
 		}
 	});
 	
@@ -87,7 +87,7 @@ function get_more_tweets(){
 }
 
 function get_sessions(){
-	var jqXHR = jQuery.getJSON("http://www.gamecampmunich.de/index.php", {session_overview: "json", session_event: "2012"}, function(data, textStatus, xhr){
+	var jqXHR = jQuery.getJSON("/index.php", {session_overview: "json", session_event: "2013"}, function(data, textStatus, xhr){
 
 		var running_html = null;
 		var upcoming_html = null;
