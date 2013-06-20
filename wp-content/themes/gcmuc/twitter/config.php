@@ -6,7 +6,7 @@
  */
 
 //get public directory structure eg "/top/second/third" 
-$public_directory = dirname($_SERVER['PHP_SELF']); 
+$public_directory = 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']); 
 //place each directory into array 
 $directory_array = explode('/', $public_directory); 
 //get highest or top level in array of directory strings 
