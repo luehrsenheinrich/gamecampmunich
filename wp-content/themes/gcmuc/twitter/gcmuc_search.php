@@ -35,7 +35,7 @@ if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
 $path = dirname( __FILE__ )."/cache/";
 if ($handle = opendir($path)) {
  while (false !== ($file = readdir($handle))) {
-    if ((time()-filectime($path.$file)) > 60 * 60) {  
+    if ((time()-filectime($path.$file)) > 60 * 60 && $file != "." && $file != "..") {  
           unlink($path.$file);
     }
  }
