@@ -2,6 +2,9 @@
 /*
 	Template Name: Twitter-Wall
 */
+session_start();
+session_destroy();
+session_start();
 
 wp_enqueue_script("twitwall", WP_THEME_URL."/js/twitwall.js", array("jquery"), time());
 
