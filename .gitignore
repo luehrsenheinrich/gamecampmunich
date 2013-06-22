@@ -13,6 +13,7 @@ wp-content/gamesdb_packshots/
 sitemap.xml
 *.log
 *.cache
+*.tmp
 wp-content/cache/
 wp-content/backups/
 sitemap.xml
