@@ -27,12 +27,15 @@ get_header(); ?>
           
               
                   <div class="single-entry">
-                    
                       <div class="media-body">
                           <div class="the-content">
                               <?php echo the_content() ?>
                           </div>
                       </div>
+                  </div>
+                  
+                  <div class="centerdiv">
+                  	<a class="editor_buttons" href="http://eepurl.com/A39Fv">Jetzt zum GameCamp Newsletter eintragen</a>
                   </div>
                          
               
