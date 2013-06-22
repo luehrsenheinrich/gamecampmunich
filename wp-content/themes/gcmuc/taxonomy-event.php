@@ -8,8 +8,7 @@ $event = get_queried_object();
 if(!isset($_GET['sessionplan_date'])){
 	$args = array(	
 		'post_type' => 'session',
-		'taxonomy' => 'event',
-		'term' => $event_term->slug,
+		'event' => $event->slug,
 		'posts_per_page' => 1,
 		'orderby'=>'meta_value_num',
 		'meta_key' => '_session_start',
