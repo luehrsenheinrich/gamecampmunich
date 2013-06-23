@@ -29,6 +29,7 @@ if(!isset($_GET['sessionplan_date'])){
 
 $sessions = lh_get_sessions($event->slug, date("Y", $sessionplan_date), date("m", $sessionplan_date), date("d", $sessionplan_date));
 $rooms = lh_get_rooms($sessions);
+usort($rooms, "lh_sort_rooms");
 $time_dimensions = get_time_dimensions($sessions);
 
 global $lh_session_dates;

@@ -81,6 +81,17 @@ function lh_get_rooms($sessions = NULL){
 }
 
 
+function lh_sort_rooms($room_A, $room_B){
+	
+	if(get_tax_meta($room_A->term_id,'lh_location_position') >= get_tax_meta($room_A->term_id,'lh_location_position')){
+		return $room_B;
+	} else {
+		return $room_A;
+	}
+	
+}
+
+
 function get_time_dimensions($sessions = NULL){
 	
 	$earliest_date = 0;
