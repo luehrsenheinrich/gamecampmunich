@@ -82,12 +82,13 @@ function lh_get_rooms($sessions = NULL){
 
 
 function lh_sort_rooms($room_A, $room_B){
+	$a = get_tax_meta($room_A->term_id,'lh_location_position');
+	$b = get_tax_meta($room_B->term_id,'lh_location_position');
 	
-	if(get_tax_meta($room_A->term_id,'lh_location_position') >= get_tax_meta($room_A->term_id,'lh_location_position')){
-		return $room_B;
-	} else {
-		return $room_A;
-	}
+	if ($a == $b) {
+        return 0;
+    }
+    return ($a < $b) ? -1 : 1;
 	
 }
 
