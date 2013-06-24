@@ -156,7 +156,7 @@ function _sort_sessions($a, $b){
 	$b_val = intval(get_tax_meta($b_term->term_id, "lh_location_position"));
 	
 	
-	if($a > $b){
+	if($a < $b){
 		return -1;	
 	} else {
 		return 1;
