@@ -155,12 +155,10 @@ function _sort_sessions($a, $b){
 	$a_val = intval(get_tax_meta($a_term->term_id, "lh_location_position"));
 	$b_val = intval(get_tax_meta($b_term->term_id, "lh_location_position"));
 	
-	
-	if($a < $b){
-		return -1;	
-	} else {
-		return 1;
-	}
+	if ($a_val == $b_val) {
+        return 0;
+    }
+    return ($a_val < $b_val) ? -1 : 1;
 }
 
 
