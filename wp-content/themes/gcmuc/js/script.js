@@ -11,6 +11,7 @@ $(document).ready(function($){
 	});
 	$("a[href*='.png']").addClass("fancybox");
 	$("a[href*='.gif']").addClass("fancybox");
+	$("a[href*='.jpg']").addClass("fancybox");
 	
 	// Fancybox
 	$(".fancybox").fancybox({
