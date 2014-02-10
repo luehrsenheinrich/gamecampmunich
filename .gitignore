@@ -20,11 +20,8 @@ sitemap.xml
 sitemap.xml.gz
 .DS_Store
 *.DS_Store
-wp-content/themes/gcmuc/style_kgaming.css
 wp-content/themes/gcmuc/editor-style.css
 wp-content/plugins/*
-wp-admin/*
-wp-includes/*
 
 # Add the files back in, that we're actually editing
 !wp-content/plugins/lh-sessions
