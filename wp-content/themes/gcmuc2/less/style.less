@@ -1,0 +1,27 @@
+// Main LESS File
+
+// Bootstrap, own variables, font-awesome
+@import "lh_variables";
+@import "bootstrap/bootstrap";
+@import "font-awesome/font-awesome";
+
+
+// Vendor stuff, 3rd party libs
+@import "vendor/magnific";
+
+.the_content {
+	font-size: 1.1em;
+	@import "content";
+}
+
+// Own less files
+@import "main";
+@import "header";
+@import "sidebar";
+@import "footer";
+@import "page";
+@import "lh_shortcodes";
+
+// Own responsive stuff
+@import "xs/xs";
+@import "sm/sm";

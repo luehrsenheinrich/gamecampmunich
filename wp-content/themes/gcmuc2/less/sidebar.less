@@ -1,0 +1,83 @@
+.page-wrapper {
+	
+	.sidebar {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 300px;
+		height: 100%;
+		background-color: #333;
+		border-left: #555 solid 1px;
+		color: #fff;
+		padding: 20px;
+		
+		h1, h2, h3, h4 {
+			color: @brandColor;
+		}
+		
+		h4 {
+			font-size: 0.9em;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+		
+		.sidebar-buttons {
+			text-align: center;
+			margin-bottom: 30px;
+			
+			ul {
+				padding: 0;
+				margin: 0;
+				
+				li.menu-item {
+					a {
+						color: #fff;
+					}
+					
+					a:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		
+		.newsletter {
+			height: 0px;
+			overflow: hidden;
+			.transition(all linear 0.6s);
+			
+			input {
+				background-color: #333;
+				border: 2px solid #eee;
+				margin-bottom: 10px;
+			}
+		}
+		
+		.height_transition {
+			height: 200px !important;
+			margin-bottom: 30px;
+			.transition(all linear 0.6s);
+		}
+		
+		.partner, .newsletter {
+			li {
+				list-style-type: none;
+				
+				div.textwidget {
+					a {
+						display: block;
+						width: 100%;
+						text-align: center;
+						margin-bottom: 20px;
+						
+						img {
+							max-width: 70%;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}

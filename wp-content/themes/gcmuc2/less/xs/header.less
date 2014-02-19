@@ -1,0 +1,112 @@
+//
+// The Phone Menu
+//
+
+@phoneMenuWidth: 240px;
+
+nav.phone-menu {
+	width: @phoneMenuWidth;
+
+	ul.menu {
+		margin: 0;
+		padding: 0;
+
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+		border-top: 1px solid rgba(0,0,0,0.1);
+
+		li.menu-item {
+			border-top: 1px solid rgba(255,255,255,0.1);
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+
+			a {
+				font-weight: 600;
+				color: #fff;
+				font-size: 0.75em;
+				text-transform: uppercase;
+				text-decoration: none;
+				display: block;
+				padding: 10px 10px;
+			}
+
+			a:hover {
+				background: @brandColor;
+			}
+		}
+	}
+}
+
+.phone-menu-wrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: @phoneMenuWidth;
+	background: @gray-dark;
+	#gradient > .horizontal(@gray-darker, @gray-dark);
+	overflow: scroll;
+
+	.contact_wrapper {
+		text-align: center;
+		color: @gray-lighter;
+		text-shadow: -1px -1px 0px rgba(0,0,0,0.5);
+		margin: 25px 0;
+
+		a {
+			color: @gray-lighter;
+			text-decoration: none;
+		}
+
+		h3 {
+			margin: 0;
+			padding: 0;
+			line-height: 1.333em;
+		}
+	}
+
+}
+
+body.mobile_nav_open {
+	overflow: hidden;
+
+	.viewport {
+		overflow: hidden;
+	}
+
+	.page-wrapper {
+		position: relative;
+		left: @phoneMenuWidth;
+	}
+
+	.phone-menu-lightbox {
+		display: block;
+	}
+}
+
+.phone-menu-lightbox {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.3);
+	z-index: 5;
+
+	display: none;
+}
+
+// End Phone Menu
+header {
+	div.head_logo {
+		text-align: center;
+	}
+
+	div.head_contact {
+		height: auto;
+
+		.contact_wrapper {
+			float: right;
+			position: relative;
+		}
+	}
+
+}

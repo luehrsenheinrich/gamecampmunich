@@ -1,0 +1,73 @@
+.page-wrapper {
+	padding-right: 300px;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+	left: 0;
+	.transition(all .5s);
+	height: 100%;
+}
+
+header {
+	background-color: @brandColor;
+	background-image: url(img/shadow_browser.png);
+	background-position: center top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 205px;
+	width: 100%;
+
+	.head_logo {
+		
+		.logo {
+			text-align: center;
+			margin: 50px 0 40px 0;
+			img {
+				width: 600px;
+				height: auto;
+			}
+		}
+	}
+	
+	nav.standard-menu {
+		ul.menu {
+			padding: 0;
+			margin: 0 auto;
+			list-style-type: none;
+			text-align: center;
+			
+			li.menu-item {
+				display: inline-block;
+				background-color: @gray-2;
+				padding: 6px 12px;
+				border-radius: 10px;
+				border: 2px solid #fff;
+				margin-right: 20px;
+				
+				a {
+					color: #fff;
+					text-transform: uppercase;
+					font-weight: 600;
+					font-size: 1.1em;
+				}
+				
+				a:hover {
+					text-decoration: none;
+				}
+			}
+			
+			li.menu-item:hover {
+				background-color: @brandColor;
+				
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.content-wrapper {
+	margin-top: 40px;
+	min-height: 600px;
+}
