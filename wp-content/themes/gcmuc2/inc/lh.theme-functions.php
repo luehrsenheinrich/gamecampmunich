@@ -228,6 +228,7 @@ if(!function_exists("shorten_text")){
 	 * @return void
 	 */
 	function shorten_text($str, $length, $minword = 3){
+		global $_lh_theme_functions;
 		return $_lh_theme_functions->shorten_text($str, $length, $minword = 3);
 	}
 

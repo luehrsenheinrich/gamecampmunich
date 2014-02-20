@@ -42,14 +42,34 @@ function lh_enqueue_scripts(){
 	// Register Scripts used by the theme
 	wp_register_script('plugins', (WP_JS_URL . "/plugins.min.js"), array("jquery"), '1', true);
 	wp_register_script('main', (WP_JS_URL . "/main.min.js"), array("jquery", "plugins"), '1', true);
-	
-	// wp_register_script('transition', (WP_JS_URL . "/bootstrap/transition.js"), array("jquery", "plugins"), '1', true);
-	// wp_register_script('collapse', (WP_JS_URL . "/bootstrap/collapse.js"), array("transition"), '1', true);
 
 	wp_enqueue_script("main");
 
 }
 add_action("wp_enqueue_scripts", "lh_enqueue_scripts");
+
+
+/**
+ * Define what the theme supports.
+ * Called by action "after_setup_theme".
+ *
+ * @author Hendrik Luehrsen
+ * @since 1.0
+ * 
+ * @access public
+ * @return void
+ */
+function theme_supports(){
+	add_theme_support( 'post-thumbnails' );
+}
+add_action("after_setup_theme", "theme_supports");
+
+
+/*
+ * Images
+ */
+set_post_thumbnail_size(500, 250, true);
+
 
 /*
  * Add language support
@@ -79,75 +99,6 @@ function lh_register_menus(){
 }
 add_action('init', 'lh_register_menus');
 
-
-/**
- * lh_image_sizes function.
- *
- * @access public
- * @return void
- */
-function lh_image_sizes(){
-
-	if(is_admin()){
-	    $medium_dimensions = array(455, 256);
-	    if($medium_dimensions[0] != get_option( 'medium_size_w' ) || $medium_dimensions[1] != get_option( 'medium_size_h' )){
-	        update_option( 'medium_size_w', $medium_dimensions[0]);
-		        update_option( 'medium_size_h', $medium_dimensions[1]);
-	    }
-
-	    $large_dimensions = array(910, 512);
-	    if($large_dimensions[0] != get_option( 'large_size_w' ) || $large_dimensions[1] != get_option( 'large_size_h' )){
-	        update_option( 'large_size_w', $large_dimensions[0]);
-		        update_option( 'large_size_h', $large_dimensions[1]);
-	    }
-	}
-}
-add_action('init', 'lh_image_sizes');
-
-/**
- * lh_mce_before_init_insert_formats function.
- *
- * @access public
- * @param mixed $init_array
- * @return void
- */
-function lh_mce_before_init_insert_formats( $init_array ) {
-	// Define the style_formats array
-	$style_formats = array(
-		array(
-			'title' => __("Brand Headlines", LANG_NAMESPACE),
-			'classes' => 'brand-headline',
-			'selector' => 'h1,h2',
-			'wrapper' => true,
-			'exact' => false,
-
-		),
-	);
-
-	$init_array['style_formats'] = json_encode( $style_formats );
-
-	return $init_array;
-
-}
-add_filter( 'tiny_mce_before_init', 'lh_mce_before_init_insert_formats' );
-
-/**
- * lh_mce_buttons_2 function.
- *
- * @access public
- * @param mixed $buttons
- * @return void
- */
-function lh_mce_buttons_2( $buttons ) {
-	array_unshift( $buttons, 'styleselect' );
-	return $buttons;
-}
-add_filter('mce_buttons_2', 'lh_mce_buttons_2');
-
-/**
- * WPCF7
- */
-define('WPCF7_LOAD_CSS', false);
 
 /**
  * Define the Sidebars
