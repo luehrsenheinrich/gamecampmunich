@@ -61,9 +61,15 @@ class SessionCore {
 			'hierarchical' => false,
 			'menu_position' => null,
 			'supports' => array( 'title', 'editor', 'author', 'comments' )
+<<<<<<< HEAD
 		  );
 
 		register_post_type('session', $args);
+=======
+		  ); 	
+		  
+		$response = register_post_type('session',$args);
+>>>>>>> f10b8a7098b56f60f307e45e62260db934a79fe4
 	}
 
 
