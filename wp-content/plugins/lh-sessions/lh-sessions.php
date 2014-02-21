@@ -36,7 +36,8 @@ require_once("tax-meta-class.php");
 
 
 if(is_admin()){
-	$lh_session = new SessionAdmin();
+	$lh_sessions_admin = new SessionAdmin();
 } else {
-	$lh_session = new SesseionFrontend();	
+	$lh_sessions_frontend = new SesseionFrontend();
 }
+
