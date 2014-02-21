@@ -18,7 +18,6 @@ class SessionCore {
 		add_action( 'pre_get_posts', array($this, 'query_set_only_author') );
 		add_action( 'plugins_loaded', array($this, 'plugin_init') );
 		add_action( 'template_redirect', array($this, 'redirect_to_session_overview') );
-
 	}
 	
 	
