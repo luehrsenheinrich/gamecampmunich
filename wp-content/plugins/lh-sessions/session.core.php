@@ -57,6 +57,7 @@ class SessionCore {
 			'query_var' => true,
 			'rewrite' => array( 'slug' => "session/%event%"),
 			'capability_type' => 'session',
+			'map_meta_cap' => true,
 			'has_archive' => true,
 			'hierarchical' => false,
 			'menu_position' => null,
