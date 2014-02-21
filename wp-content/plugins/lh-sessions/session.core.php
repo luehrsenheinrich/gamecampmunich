@@ -63,7 +63,7 @@ class SessionCore {
 			'supports' => array( 'title', 'editor', 'author', 'comments' )
 		  ); 	
 		  
-		register_post_type('session',$args);
+		$response = register_post_type('session',$args);
 	}
 	
 	
