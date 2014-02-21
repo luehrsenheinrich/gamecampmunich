@@ -8,7 +8,7 @@
 			$i = 0; while( have_posts() ) : the_post(); 
 			
 		    if(has_post_thumbnail()){
-		        $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "loop_square");
+		        $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "single");
 		        $style = 'style="background-image: url('.$image[0].');")';
 		    } else {
 		        $style = 'style="background-image: url('.WP_THEME_URL.'/img/gcmuc_loop_placeholder.png);")';
@@ -20,7 +20,7 @@
 		        <div class="row margin-bottom">
 		    <?php endif; ?>
 		    
-		        <div class="col-md-6">
+		        <div class="col-md-6 col-sm-6 col-xs-12">
 		            <div class="loop-item">
 		            	<a href="<?php the_permalink(); ?>" title="<?php echo strip_tags(get_the_title()); ?>">
 		                <div class="item-pic" <?=$style?>>
@@ -36,7 +36,7 @@
 		                        </h3>
 		                  	</div>
 		                    <div class="item-excerpt">
-		                    	<?php echo shorten_text(trim( strip_tags( get_the_content())), 70); ?>
+		                    	<?php echo shorten_text(trim( strip_tags( get_the_content())), 140); ?> <a href="<?php the_permalink(); ?>" title="<?php echo strip_tags(get_the_title()); ?>">weiterlesen</a>
 		                    </div>
 		                </div>
 		            	</a>

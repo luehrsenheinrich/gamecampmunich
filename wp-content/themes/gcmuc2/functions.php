@@ -69,6 +69,7 @@ add_action("after_setup_theme", "theme_supports");
  * Images
  */
 set_post_thumbnail_size(500, 250, true);
+add_image_size("single", 650, 325, true);
 
 
 /*
