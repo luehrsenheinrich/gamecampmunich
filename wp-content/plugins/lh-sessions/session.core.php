@@ -64,6 +64,8 @@ class SessionCore {
 		  );
 
 		register_post_type('session', $args);
+
+		var_dump(get_post_types());
 	}
 
 

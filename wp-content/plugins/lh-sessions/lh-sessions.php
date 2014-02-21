@@ -40,4 +40,3 @@ if(is_admin()){
 } else {
 	$lh_sessions_frontend = new SesseionFrontend();
 }
-
