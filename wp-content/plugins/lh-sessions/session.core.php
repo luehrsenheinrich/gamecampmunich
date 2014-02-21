@@ -18,6 +18,32 @@ class SessionCore {
 		add_action( 'pre_get_posts', array($this, 'query_set_only_author') );
 		add_action( 'plugins_loaded', array($this, 'plugin_init') );
 		add_action( 'template_redirect', array($this, 'redirect_to_session_overview') );
+
+		register_activation_hook( LH_SESSIONS_FILE, array($this, "on_plugin_activate") );
+		register_deactivation_hook( LH_SESSIONS_FILE, array($this, "on_plugin_deactivate") );
+	}
+
+
+	/**
+	 * on_plugin_activate function.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function on_plugin_activate(){
+		$this->add_user_speaker_role();
+		$this->add_user_caps();
+	}
+
+
+	/**
+	 * on_plugin_deactivate function.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function on_plugin_deactivate(){
+		$this->remove_user_speaker_role();
 	}
 
 
@@ -67,8 +93,88 @@ class SessionCore {
 		register_post_type('session', $args);
 	}
 
+	/**
+	 * add_user_speaker_role function.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	private function add_user_speaker_role(){
+		$result = add_role(
+		    'speaker',
+		    __( 'Session Speaker', "lh-sessions" )
+		);
+	}
 
+	/**
+	 * remove_user_speaker_role function.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	private function remove_user_speaker_role(){
+		remove_role('speaker');
+	}
 
+	/**
+	 * add_user_caps function.
+	 *
+	 * @access private
+	 * @return void
+	 */
+	private function add_user_caps(){
+		$c = array(
+			"edit_session",
+			"read_session",
+			"delete_session",
+			"edit_sessions",
+			"edit_others_sessions",
+			"publish_sessions",
+			"read_private_sessions",
+	        "delete_sessions",
+	        "delete_private_sessions",
+	        "delete_published_sessions",
+	        "delete_others_sessions",
+	        "edit_private_sessions",
+	        "edit_published_sessions",
+		);
+
+		// Subscriber may read
+		$subscriber = get_role( 'subscriber' );
+		$subscriber->add_cap($c[1]);
+
+		// Contributor may read
+		$contributor = get_role( 'contributor' );
+		$subscriber->add_cap($c[1]);
+
+		// Author may read, edit, delete & publish
+		$author = get_role( 'author' );
+		$caps = array($c[0], $c[1], $c[2], $c[3], $c[5]);
+		foreach($caps as $b){
+			$author->add_cap($b);
+		}
+
+		// Speaker may read, edit, delete
+		$speaker = get_role( 'speaker' );
+		if($speaker){
+			$caps = array($c[0], $c[1], $c[2], $c[3]);
+			foreach($caps as $b){
+				$speaker->add_cap($b);
+			}
+		}
+
+		// Editor may read, edit, delete & publish others
+		$editor = get_role( 'editor' );
+		foreach($c as $b){
+			$editor->add_cap($b);
+		}
+
+		// Administrator may do everything
+		$administrator = get_role( 'administrator' );
+		foreach($c as $b){
+			$administrator->add_cap($b);
+		}
+	}
 
 
 	/**

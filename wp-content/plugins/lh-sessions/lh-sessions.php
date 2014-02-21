@@ -34,6 +34,7 @@ require_once( dirname( __FILE__ ). "/session.front.php" );
 require_once( dirname( __FILE__ ). "/session.functions.php" );
 require_once("tax-meta-class.php");
 
+define("LH_SESSIONS_FILE", __FILE__);
 
 if(is_admin()){
 	$lh_sessions_admin = new SessionAdmin();
