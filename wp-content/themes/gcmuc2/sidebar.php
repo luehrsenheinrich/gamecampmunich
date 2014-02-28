@@ -1,4 +1,9 @@
-<div class="sidebar hidden-xs clearfix" id="collapse-parent">
+<div class="sidebar clearfix" id="collapse-parent">
+	
+	<div class="sidebar-trigger">
+		<a href="#" class="sidebar-trigger-button"><i class="fa fa-thumbs-up"></i> click me</a>
+	</div>
+	
 	<div class="sb-position1 sidebar-buttons">
 		
 		<?php

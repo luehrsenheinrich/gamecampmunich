@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-	$(".open-contact-popup").magnificPopup({});
-
 	/**
 	 * Lightbox
 	 */
@@ -18,11 +16,28 @@ $(document).ready(function(){
 	});
 
 	/**
+	 * Sidebar Trigger
+	 */
+
+	$(".sidebar-trigger").click(function(){
+		$(".sidebar").toggleClass("sidebar-open");
+	});
+	
+	$('.sidebar-trigger-button').click(function(){
+		$('.sidebar-trigger').addClass('clicked');
+		$('.sidebar-trigger-button').text("YAY!");
+	});
+	
+	/**
 	 * Mobile Nav
 	 */
 
-	$(".head_logo").click(function(){
+	$(".menu_button").click(function(){
 		$("body").toggleClass("mobile_nav_open");
+	});
+	
+	$(".sidebar-trigger-button").click(function(){
+		$("body").toggleClass("sidebar_open");
 	});
 
 	$(".phone-menu-lightbox").click(function(){
@@ -32,4 +47,5 @@ $(document).ready(function(){
 	$(".nl-trigger").click(function(){
 		$("#nl_collapse").toggleClass("height_transition");
 	});
+	
 });

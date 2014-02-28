@@ -106,13 +106,14 @@ class lh_shortcodes {
 		extract( shortcode_atts( array(
 			'col'	=> "4", // 4, 6
 			'img'	=> "http://farm8.staticflickr.com/7387/9142921049_26a44b7513.jpg", // img url
+			'href'	=> "http://www.flickr.com/groups/gcmuc09/pool",
 		), $atts ) );
 
-		$html  = '<div class="col-xs-12 col-sm-'.$col.' col-md-'.$col.' shortcode_content"><div style="background-image: url('.$img.');" class="featureset-inner">';
+		$html  = '<div class="col-xs-12 col-sm-'.$col.' col-md-'.$col.' shortcode_content"><a href="'.$href.'" target="_blank"><div style="background-image: url('.$img.');" class="featureset-inner">';
 
 		$html .= do_shortcode(trim($content));
 
-		$html .= '</div></div>';
+		$html .= '</div></a></div>';
 
 		return $html;
 	}

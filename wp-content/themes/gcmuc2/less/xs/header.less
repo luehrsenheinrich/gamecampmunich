@@ -2,10 +2,10 @@
 // The Phone Menu
 //
 
-@phoneMenuWidth: 240px;
+@phoneMenuWidth: 200px;
 
 nav.phone-menu {
-	width: @phoneMenuWidth;
+	width: (@phoneMenuWidth - 20px);
 
 	ul.menu {
 		margin: 0;
@@ -17,7 +17,7 @@ nav.phone-menu {
 		li.menu-item {
 			border-top: 1px solid rgba(255,255,255,0.1);
 			border-bottom: 1px solid rgba(0,0,0,0.1);
-
+			
 			a {
 				font-weight: 600;
 				color: #fff;
@@ -26,10 +26,25 @@ nav.phone-menu {
 				text-decoration: none;
 				display: block;
 				padding: 10px 10px;
+				
+				i {
+					margin-right: 5px;
+					color: @gray-1;
+				}
 			}
 
 			a:hover {
 				background: @brandColor;
+			}
+			
+			ul.sub-menu {
+				li.menu-item {
+					a {
+						i {
+							display: none;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -41,9 +56,8 @@ nav.phone-menu {
 	bottom: 0;
 	left: 0;
 	width: @phoneMenuWidth;
-	background: @gray-dark;
-	#gradient > .horizontal(@gray-darker, @gray-dark);
-	overflow: scroll;
+	background: @gray-5;
+	overflow-y: scroll;
 
 	.contact_wrapper {
 		text-align: center;
@@ -98,6 +112,30 @@ body.mobile_nav_open {
 header {
 	div.head_logo {
 		text-align: center;
+		position: relative;
+		
+		.menu_button {
+			position: absolute;
+			left: -2px;
+			top: 67px;
+			
+			a.menu-trigger-button {
+				background-color: @gray-2;
+				display: block;
+				padding: 4px 10px;
+				border-radius: 0 10px 10px 0;
+				border: 2px solid #fff;
+				color: #fff;
+				font-size: 1em;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				background-color: @brandColor;
+			}
+		}
 	}
 
 	div.head_contact {
@@ -109,4 +147,26 @@ header {
 		}
 	}
 
+}
+
+header {
+	background-image: none;
+	height: 104px;
+
+	.head_logo {
+		
+		.logo {
+			text-align: center;
+			margin: 20px 0 20px 0;
+			img {
+				width: 280px;
+				height: auto;
+			}
+		}
+	}
+}
+
+.content-wrapper {
+	margin-top: 40px;
+	min-height: 600px;
 }
