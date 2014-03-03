@@ -37,7 +37,7 @@
 	</div>
 </footer>
 
-<div class="phone-menu-lightbox"></div>
+<div class="phone-menu-lightbox sidebar-lightbox"></div>
 
 </div> <? #Page-Wrapper ?>
 

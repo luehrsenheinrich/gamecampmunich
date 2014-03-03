@@ -23,25 +23,25 @@ $(document).ready(function(){
 		$(".sidebar").toggleClass("sidebar-open");
 	});
 	
-	$('.sidebar-trigger-button').click(function(){
-		$('.sidebar-trigger').addClass('clicked');
-		$('.sidebar-trigger-button').text("YAY!");
-	});
-	
 	/**
 	 * Mobile Nav
 	 */
 
-	$(".menu_button").click(function(){
+	$(".menu_trigger").click(function(){
 		$("body").toggleClass("mobile_nav_open");
 	});
 	
 	$(".sidebar-trigger-button").click(function(){
 		$("body").toggleClass("sidebar_open");
 	});
+	
 
 	$(".phone-menu-lightbox").click(function(){
 		$("body").removeClass("mobile_nav_open");
+	});
+	
+	$(".sidebar-lightbox").click(function(){
+		$("body").removeClass("sidebar_open");
 	});
 	
 	$(".nl-trigger").click(function(){

@@ -36,17 +36,22 @@
 
 </div>
 
+<?php get_template_part("sidebar"); ?>
+
 <div class="page-wrapper">
-
-	<?php get_template_part("sidebar"); ?>
-
+	<div class="sidebar-trigger hidden-xs">
+		<a href="#" class="sidebar-trigger-button"><i class="fa fa-thumbs-up"></i> click me</a>
+	</div>
 <header>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 head_logo">
-				<div class="menu_button visible-xs">
+				<div class="menu_trigger visible-xs">
 					<a href="#phone-menu" class="menu-trigger-button"><i class="fa fa-bars"></i> Menu</a>
+				</div>
+				<div class="sidebar-trigger visible-xs">
+					<a href="#" class="sidebar-trigger-button"><i class="fa fa-thumbs-up"></i> click me</a>
 				</div>
 				<?php if(is_single()){ ?>
                 <div class="logo"><a href="<?php bloginfo('url'); ?>" title="GameCamp Munich"><img src="<?=WP_THEME_URL?>/img/gcmuc_logo_2014.svg" alt="GameCamp Munich" title="GameCamp Munich"></a></div>
