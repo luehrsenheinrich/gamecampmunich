@@ -47,7 +47,7 @@ global $lh_session_dates;
 			    <? if(is_array($lh_session_dates)): ?>
 			    <div class="event_dates">
 			    	<? foreach($lh_session_dates as $d): if($d != $sessionplan_date):?>
-			        	<a class="editor_buttons" href="<?=get_term_link($event->slug, "event")?>?sessionplan_date=<?=$d?>"><?=date_i18n("l, d.m.Y", $d)?></a>
+			        	<a class="editor_buttons button btn btn-default btn-warning" href="<?=get_term_link($event->slug, "event")?>?sessionplan_date=<?=$d?>"><?=date_i18n("l, d.m.Y", $d)?></a>
 			        <? endif; endforeach; ?>
 			    </div>
 			   	<? endif; ?>
@@ -62,8 +62,7 @@ global $lh_session_dates;
 								
 				    	<? 
 				    	
-				    	if(is_array($sessions)): foreach($sessions as $room => $sess):
-					    	
+				    	if(is_array($sessions)): foreach($sessions as $room => $sess): if($room == $r->slug):
 				    	?>
 					        	
 			        	<div class="room_<?=$room?> sessions">
@@ -82,7 +81,7 @@ global $lh_session_dates;
 			                <? endforeach; endif; ?>
 			            </div>
 				        
-				        <? endforeach; else: ?>
+				        <? endif; endforeach; else: ?>
 					        
 					        	<p>Keine Sessions für diesen Raum zu dieser Zeit im System.</p>
 					        

@@ -34,6 +34,11 @@
 				</p>
 			</div>
 		</div>
+		<div class="row fb-like-face">
+			<div class="col-md-12 col-sm-12 col-xs-sm-12">
+				<div class="fb-like" data-href="https://www.facebook.com/GameCampMunich" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+			</div>
+		</div>
 	</div>
 </footer>
 
@@ -44,5 +49,18 @@
 </div> <? #Viewport ?>
 
 <?php wp_footer(); ?>
+
+<? // Social Media Scripts ?>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=364461830288428";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>

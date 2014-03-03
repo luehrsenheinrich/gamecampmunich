@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="container loop-wrapper">
+	<div class="container loop-wrapper category-wrapper">
 		
 		
 		<?php 
@@ -25,12 +25,9 @@
 		    
 		        <div class="col-md-6 col-sm-6 col-xs-12">
 		            <div class="loop-item">
-		            	<a href="<?php the_permalink(); ?>" title="<?php echo strip_tags(get_the_title()); ?>">
+		            	
 		                <div class="item-pic" <?=$style?>>
-		                    
-		                    <div class="item-meta pull-left">
-                    			<span><?php the_time(get_option('date_format')); ?></span>
-		                    </div>
+		                	<a href="<?php the_permalink(); ?>" title="<?php echo strip_tags(get_the_title()); ?>"></a>
 		                </div>
 		                <div class="item-body">
 		                	<div class="item-headline">
@@ -38,11 +35,8 @@
 		                        	<a href="<?php the_permalink(); ?>" title="<?php echo strip_tags(get_the_title()); ?>"><?php the_title(); ?></a>
 		                        </h3>
 		                  	</div>
-		                    <div class="item-excerpt">
-		                    	<?php echo shorten_text(trim( strip_tags( get_the_content())), 140); ?> <a href="<?php the_permalink(); ?>" title="<?php echo strip_tags(get_the_title()); ?>">weiterlesen</a>
-		                    </div>
+		                    
 		                </div>
-		            	</a>
 		            </div>
 		        </div>            
 		        

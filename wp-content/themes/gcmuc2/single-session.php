@@ -1,5 +1,5 @@
 <? 
-add_action("wp_head", array($lh_session, "session_og_head"));
+add_action("wp_head", array($lh_sessions_frontend, "session_og_head"));
 
 get_header(); ?>
 
@@ -14,7 +14,8 @@ get_header(); ?>
 			    <?php get_sidebar(); ?> 
 			    <article <?php post_class("content-wrapper"); ?>>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			    		<div class="date-time"><?=date("d.m.Y - H:i", get_post_meta($post->ID, "_session_start", true))?> Uhr<br />
+			    		<div class="date-time clearfix"><span class="single-date"><?=date("d.m.Y - H:i", get_post_meta($post->ID, "_session_start", true))?> Uhr</span>
+			            <span class="single-location pull-right">
 			            <?
 							$terms = get_the_terms($post->ID, "location");
 							if($terms && ! is_wp_error( $terms )){
@@ -27,6 +28,7 @@ get_header(); ?>
 								echo implode(", ", $term_arr);
 							}
 						?>
+			            </span>
 			            </div>
 			            <h1><?php the_title(); ?></h1>
 			            <div class="session_wrapper clearfix">
