@@ -66,12 +66,7 @@
 		endif; // query_post
 		?>
 		
-		<div class="row margin-bottom">
-			<div class="col-md-12">
-				<div class="pagination loop-next pull-left"><?php previous_posts_link( '<i class="icon-chevron-left"></i> Neuere Beiträge' ); ?></div>
-				<div class="pagination loop-previous pull-right"><?php next_posts_link( 'Weitere Beiträge <i class="icon-chevron-right"></i>' ); ?></div>
-			</div>
-		</div>
+		
 
 		
 		
