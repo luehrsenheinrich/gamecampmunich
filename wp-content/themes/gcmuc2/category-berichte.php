@@ -28,12 +28,12 @@
 		            <div class="loop-item">
 		            	
 		                <div class="item-pic" <?=$style?>>
-		                	<a href="<?=$bericht?>" title="<?php echo strip_tags(get_the_title()); ?>"></a>
+		                	<a href="<?=$bericht?>" target="_blank" title="<?php echo strip_tags(get_the_title()); ?>"></a>
 		                </div>
 		                <div class="item-body">
 		                	<div class="item-headline">
 		                        <h3>
-		                        	<a href="<?=$bericht?>" title="<?php echo strip_tags(get_the_title()); ?>"><?php the_title(); ?></a>
+		                        	<a href="<?=$bericht?>" target="_blank" title="<?php echo strip_tags(get_the_title()); ?>"><?php the_title(); ?></a>
 		                        </h3>
 		                  	</div>
 		                    
