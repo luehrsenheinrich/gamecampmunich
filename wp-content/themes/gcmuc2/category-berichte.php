@@ -6,7 +6,7 @@
 		<?php 
 		
 		if ( is_category( 'berichte' ) ) :
-			query_posts( array( 'category_name' => 'berichte', 'posts_per_page' => 10 ) ); 
+			query_posts( array( 'category_name' => 'berichte', 'posts_per_page' => -1 ) ); 
 			
 			$i = 0; while( have_posts() ) : the_post(); 
 			
