@@ -18,6 +18,10 @@
 		    }
 		    
 		    $bericht = get_post_meta($post->ID, "_lh_bericht_url", true);
+		    
+		    if($bericht = NULL){
+			    $bericht = the_permalink();
+		    }
 		?>
 	        
 		    <?php if($i == 0): ?>
