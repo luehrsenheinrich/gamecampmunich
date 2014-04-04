@@ -34,7 +34,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="row fb-like-face">
+		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-sm-12">
 				<div class="fb-like" data-href="https://www.facebook.com/GameCampMunich" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
 			</div>
