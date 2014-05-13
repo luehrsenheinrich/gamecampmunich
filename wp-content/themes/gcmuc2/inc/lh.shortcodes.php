@@ -15,6 +15,9 @@ class lh_shortcodes {
 		// The Flickr Galleryteaser Shortcode
 		add_shortcode( 'flickr_row', array($this, "flickr_row") );
 		add_shortcode( 'flickr_teaser', array($this, "flickr_teaser") );
+		
+		// The SM Buttons Shortcode
+		add_shortcode( 'sm_buttons', array($this, "sm_buttons") );
 
 		// Remove empty tags in shortcodes
 		remove_filter( 'the_content', 'wpautop' );
@@ -106,13 +109,31 @@ class lh_shortcodes {
 		extract( shortcode_atts( array(
 			'col'	=> "4", // 4, 6
 			'img'	=> "http://farm8.staticflickr.com/7387/9142921049_26a44b7513.jpg", // img url
+			'href'	=> "http://www.flickr.com/groups/gcmuc09/pool",
 		), $atts ) );
 
-		$html  = '<div class="col-xs-12 col-sm-'.$col.' col-md-'.$col.' shortcode_content"><div style="background-image: url('.$img.');" class="featureset-inner">';
+		$html  = '<div class="col-xs-12 col-sm-'.$col.' col-md-'.$col.' shortcode_content"><a href="'.$href.'" target="_blank"><div style="background-image: url('.$img.');" class="featureset-inner">';
 
 		$html .= do_shortcode(trim($content));
 
-		$html .= '</div></div>';
+		$html .= '</div></a></div>';
+
+		return $html;
+	}
+	
+	
+	/**
+	 * SM Buttons function.
+	 * Usage: [sm_buttons]
+	 * Attributes: no attributes
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function sm_buttons($atts = NULL){
+
+		$html = '<div class="sm-buttons"><div class="fb-button"><div class="fb-like" data-href="https://www.facebook.com/GameCampMunich" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></div><div class="tw-button"><a href="https://twitter.com/gamecampmunich" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @gamecampmunich</a></div></div>';
+
 
 		return $html;
 	}
