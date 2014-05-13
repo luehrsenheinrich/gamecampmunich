@@ -38,8 +38,6 @@ get_header();
 			</div>
 	
 	    <?php endwhile; endif; ?>
-	    
-	    <?php comments_template(); ?>
 	</div>
 
 <?php

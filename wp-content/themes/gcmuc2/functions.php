@@ -69,7 +69,7 @@ add_action("after_setup_theme", "theme_supports");
  * Images
  */
 set_post_thumbnail_size(500, 250, true);
-add_image_size("single", 820, 410, true);
+add_image_size("single", 650, 325, true);
 
 
 /*
@@ -95,9 +95,7 @@ add_action('after_setup_theme', 'lh_load_theme_textdomain');
 function lh_register_menus(){
 	register_nav_menus( array(
 		'header_menu' 	=> __("The Header Menu", "gcmuc"),
-		'mobile_trigger'=> __("The Trigger for Mobile Menu & Partners", "gcmuc"),
 		'sidebar' 	=> __("The Sidebar Buttons", "gcmuc"),
-		'footer' 	=> __("The Footer Links", "gcmuc"),
 	) );
 }
 add_action('init', 'lh_register_menus');

@@ -1,4 +1,5 @@
 .page-wrapper {
+	padding-right: 300px;
 	overflow: hidden;
 	position: relative;
 	background: #fff;
@@ -33,32 +34,20 @@ header {
 	}
 
 	nav.standard-menu {
-	position: relative;
-	z-index: 20;
-	
 		ul.menu {
 			padding: 0;
 			margin: 0 auto;
 			list-style-type: none;
 			text-align: center;
-<<<<<<< HEAD
 
-=======
-			background-color: @gray-2;
-			border-radius: 10px;
-			border: 2px solid #fff;
-			
->>>>>>> FETCH_HEAD
 			li.menu-item {
 				display: inline-block;
+				background-color: @gray-2;
 				padding: 6px 12px;
+				border-radius: 10px;
+				border: 2px solid #fff;
 				margin-right: 20px;
-<<<<<<< HEAD
 
-=======
-				position: relative;
-				
->>>>>>> FETCH_HEAD
 				a {
 					color: #fff;
 					text-transform: uppercase;
@@ -69,42 +58,6 @@ header {
 				a:hover {
 					text-decoration: none;
 				}
-				
-				ul.sub-menu {
-					display: none;
-					padding: 0;
-					margin: 0;
-					position: absolute;
-					left: -2px;
-					top: 33px;
-					background-color: #fff;
-					width: 150px;
-					border-left: 2px solid @gray-3;
-					border-right: 2px solid @gray-3;
-					border-bottom: 2px solid @gray-3;
-					
-					li.menu-item {
-						display: block;
-						background-color: #fff;
-						margin: 0;
-						text-align: left;
-						border-bottom: 2px solid @gray-3;
-						
-						a {
-							color: @gray-2;
-							text-transform: none;
-							font-weight: 400;
-							font-size: 1em;
-							display: block;
-							width: 100%;
-						}
-					}
-					
-					.li-menu-item:last-child {
-						border-bottom: 0;
-					}
-					
-				}
 			}
 
 			li.menu-item:hover {
@@ -112,18 +65,6 @@ header {
 
 				a {
 					color: #fff;
-				}
-				
-				ul.sub-menu {
-					display: block;
-					
-					li.menu-item:hover {
-						background-color: @brandColor;
-						
-						a {
-							color: #fff;
-						}
-					}
 				}
 			}
 		}

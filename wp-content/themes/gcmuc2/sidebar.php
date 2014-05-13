@@ -1,7 +1,4 @@
-<div class="sidebar clearfix" id="collapse-parent">
-	
-	
-	
+<div class="sidebar hidden-xs clearfix" id="collapse-parent">
 	<div class="sb-position1 sidebar-buttons">
 		
 		<?php
