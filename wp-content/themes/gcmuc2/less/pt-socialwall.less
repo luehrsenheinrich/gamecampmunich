@@ -1,0 +1,145 @@
+@ColTwitter: #00aced;
+@ColFacebook: #3b5998;
+@ColFlickr: #ff0084;
+
+body.page-template-pt-socialwall-php {
+
+	header {
+		height: 100px;
+
+		.head_logo {
+			.logo {
+				margin: 10px 0;
+				img {
+					height: 80px;
+					width: auto;
+				}
+			}
+
+		}
+	}
+
+	.content-wrapper {
+		margin-top: 0;
+	}
+}
+
+.pt-socialwall {
+	ul.social_wall_list {
+		list-style: inside none;
+		margin: 0;
+		padding: 0;
+		line-height: 0px;
+		border-top: 2px solid #fff;
+
+		li.social_wall_item {
+			width: 25%;
+		    display: inline-block;
+		    position: relative;
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+			border: 2px solid #fff;
+			line-height: normal;
+
+			div.main {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				overflow: hidden;
+			}
+
+			div.user {
+				margin: 15px;
+				color: #fff;
+				text-shadow: 0 0 1px #000,  0 0 10px #000;
+				font-size: 0.75em;
+				font-weight: 100;
+				position: relative;
+				z-index: 1;
+
+				h3 {
+					margin: 0;
+					padding: 0;
+					font-size: 1.5em;
+					font-weight: 600;
+				}
+
+				img {
+					float: left;
+					margin: 0 10px 0 0;
+					max-height: 3em;
+				}
+			}
+
+			div.text {
+				margin: 0 15px;
+				color: #fff;
+				font-size: 1.1em;
+				line-height: 1.5em;
+				text-shadow: 0 0 1px #000,  0 0 10px #000;
+				position: relative;
+				z-index: 1;
+				overflow: hidden;
+			}
+
+			div.meta {
+				position: absolute;
+				bottom: 15px;
+				left: 15px;
+				right: 15px;
+				color: #fff;
+				font-size: 0.6em;
+				z-index: 1;
+				text-align: right;
+				line-height: 1;
+				text-shadow: 0 0 1px #000;
+
+				span.text {
+					vertical-align: middle;
+				}
+			}
+		}
+
+		li.social_wall_item::after {
+		    padding-top: 56.25%; /*16:9 ratio*/
+		    display: block;
+		    content: '';
+		}
+
+		li.has_image.has_text:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			display: block;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 0;
+		}
+
+		li.twitter {
+			background-color: @ColTwitter;
+
+			.fa-inverse {
+				color: @ColTwitter;
+			}
+		}
+
+		li.flickr {
+
+			div.meta {
+				.fa-square {
+					display: none;
+				}
+
+				.fa-flickr {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+}
