@@ -24,7 +24,7 @@ if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
 	);
 
 	$qry = http_build_query($q);
-	$url = "https://api.flickr.com/services/rest/?".$qry;
+	$url = "http://api.flickr.com/services/rest/?".$qry;
 
 	$search_result = jsonp_decode(file_get_contents($url));
 
