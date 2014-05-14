@@ -112,7 +112,9 @@ body.page-template-pt-socialwall-php {
 				position: relative;
 				z-index: 1;
 				overflow: hidden;
-				max-height: (4 * 1.5em)
+				max-height: (4 * 1.5em);
+				.opacity(1);
+				.transition(opacity 2s);
 			}
 
 			div.meta {
@@ -149,7 +151,20 @@ body.page-template-pt-socialwall-php {
 			display: block;
 			background: rgba(0, 0, 0, 0.5);
 			z-index: 0;
+			.opacity(1);
+			.transition(opacity 2s);
 		}
+
+		li.has_image.has_text.text_hidden:before {
+			.opacity(0);
+		}
+
+		li.text_hidden {
+			div.text {
+				.opacity(0);
+			}
+		}
+
 
 		li.twitter {
 			background-color: @ColTwitter;

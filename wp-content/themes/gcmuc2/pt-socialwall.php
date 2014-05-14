@@ -18,10 +18,10 @@ get_header("twitterwall"); ?>
 
 <div class="clearfix pt-socialwall">
 
-	<div ng-controller="socalwallController" ng-init="init()">
+	<div ng-controller="socialwallController" ng-init="init()">
 
 		<ul class="social_wall_list" id="social_wall">
-			<li class="clearfix social_wall_item {{item.image ? 'has_image' : ''}} {{item.text ? 'has_text' : ''}} {{item.type}}" style="background-image: url({{item.image}})" ng-repeat="item in socialContent | orderBy:'time':true" ng-animate>
+			<li class="clearfix social_wall_item {{item.image ? 'has_image' : ''}} {{item.textHidden ? 'text_hidden' : ''}} {{item.text ? 'has_text' : ''}} {{item.type}}" style="background-image: url({{item.image}})" ng-repeat="item in socialContent | orderBy:'time':true" ng-animate ng-controller="socialItemCtrl" ng-init="itemInit()">
 				<div class="main">
 					<div class="user clearfix">
 						<img ng-show="item.user_image" ng-src="{{item.user_image}}" />

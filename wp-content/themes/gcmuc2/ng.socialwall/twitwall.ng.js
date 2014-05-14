@@ -10,7 +10,6 @@ app.controller("appController", function($scope, $http, $interval){
 	$scope.searchterm = decodeURIComponent(searchterm);
 
 	$scope.init = function(){
-		console.log("test");
 		$interval(function(){
 			$scope.getCurrentTime();
 		}, 1000);
@@ -26,7 +25,7 @@ app.controller("appController", function($scope, $http, $interval){
 
 });
 
-app.controller("socalwallController", function($scope, $http, $interval){
+app.controller("socialwallController", function($scope, $http, $interval){
 	$scope.shownItems = [];
 	$scope.socialContent = [];
 	$scope.max_id_str = 0;
@@ -152,6 +151,29 @@ app.controller("socalwallController", function($scope, $http, $interval){
 			$scope.shownItems.unshift(item.type+"_"+item.id);
 		}
 	};
+});
+
+
+app.controller("socialItemCtrl", function($scope, $http, $interval){
+	$scope.thisItem = {};
+	$scope.thisItem.textHidden = false;
+	$scope.baseInterval = 30000;
+
+	$scope.itemInit = function(){
+		$scope.thisItem = $scope.$parent.item;
+
+		var tick = $scope.baseInterval * Math.random() + $scope.baseInterval;
+
+		if($scope.thisItem.text != null && $scope.thisItem.image != null){
+			$interval(function(){
+				$scope.toggleImage();
+			}, tick);
+		}
+	}
+
+	$scope.toggleImage = function(){
+		$scope.thisItem.textHidden = !$scope.thisItem.textHidden;
+	}
 });
 
 
