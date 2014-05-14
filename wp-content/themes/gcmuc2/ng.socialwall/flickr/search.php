@@ -12,7 +12,7 @@ if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
 	$search_result = unserialize( stripcslashes( $file_data ) );
 
 } else {
-	$apikey = "0676fee8792b4f930e9b4e0cfbe157ef";
+	$apikey = "602347db0af07ed88414ad0eff6221a6";
 
 	$q = array(
 		"tags"			=> $_GET['q'],
@@ -24,7 +24,7 @@ if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
 	);
 
 	$qry = http_build_query($q);
-	$url = "http://api.flickr.com/services/rest/?".$qry;
+	$url = "https://api.flickr.com/services/rest/?".$qry;
 
 	$search_result = jsonp_decode(file_get_contents($url));
 

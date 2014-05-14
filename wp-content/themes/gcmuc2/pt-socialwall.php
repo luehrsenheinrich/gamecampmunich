@@ -6,8 +6,13 @@ session_start();
 session_destroy();
 session_start();
 
-wp_enqueue_script("angular", "//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js", NULL, "1.2.15");
-wp_enqueue_script("twitwall", WP_THEME_URL."/js/twitwall.ng.min.js", array("angular"), time());
+wp_enqueue_script("isotope", WP_THEME_URL . "/ng.socialwall/isotope.js", array("jquery"), "2.0.0", true);
+wp_enqueue_script("angular", "//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js", NULL, "1.2.15", true);
+wp_enqueue_script("angularAnimate", "//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.min.js", NULL, "1.2.15", true);
+wp_enqueue_script("twitwall", WP_THEME_URL."/ng.socialwall/twitwall.ng.min.js", array("angular", "jquery"), "1", true);
+wp_localize_script("twitwall", "wpData", array(
+	"themeRoot"			=> WP_THEME_URL,
+));
 
 get_header("twitterwall"); ?>
 
@@ -15,8 +20,8 @@ get_header("twitterwall"); ?>
 
 	<div ng-controller="socalwallController" ng-init="init()">
 
-		<ul class="social_wall_list" id="social_wall"  load-images="false">
-			<li class="clearfix social_wall_item {{item.image ? 'has_image' : ''}} {{item.text ? 'has_text' : ''}} {{item.type}}" style="background-image: url({{item.image}})" ng-repeat="item in socialContent | orderBy:'time':true">
+		<ul class="social_wall_list" id="social_wall">
+			<li class="clearfix social_wall_item {{item.image ? 'has_image' : ''}} {{item.text ? 'has_text' : ''}} {{item.type}}" style="background-image: url({{item.image}})" ng-repeat="item in socialContent | orderBy:'time':true" ng-animate>
 				<div class="main">
 					<div class="user clearfix">
 						<img ng-show="item.user_image" ng-src="{{item.user_image}}" />

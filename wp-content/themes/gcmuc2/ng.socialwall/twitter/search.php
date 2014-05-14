@@ -8,7 +8,7 @@ require_once('config.php');
 $cache_file = dirname( __FILE__ )."/cache/gcmuc_search.".session_id().".tmp";
 $filetime_offset = time() - 60;
 
-if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
+if(false && file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
 
 	$file_data = file_get_contents($cache_file);
 	$search_result = unserialize( stripcslashes( $file_data ) );
