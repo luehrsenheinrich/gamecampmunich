@@ -4,12 +4,12 @@ var flickr_json_search = wpData.themeRoot + "/ng.socialwall/flickr/search.php";
 var app = angular.module('socialwallApp', ['relativeDate', 'ngAnimate']);
 var searchterm = "%23gcmuc";
 
-
 app.controller("appController", function($scope, $http, $interval){
 	$scope.currentTime = 0;
 	$scope.searchterm = decodeURIComponent(searchterm);
 
 	$scope.init = function(){
+		console.log("test");
 		$interval(function(){
 			$scope.getCurrentTime();
 		}, 1000);
@@ -25,11 +25,12 @@ app.controller("appController", function($scope, $http, $interval){
 
 });
 
-app.controller("socialwallController", function($scope, $http, $interval){
+app.controller("socialwallController", function($scope, $http, $interval, $sce){
 	$scope.shownItems = [];
 	$scope.socialContent = [];
 	$scope.max_id_str = 0;
 	$scope.socialWall = null;
+	$scope.loading = false;
 
 	$scope.init = function(){
 
@@ -46,7 +47,7 @@ app.controller("socialwallController", function($scope, $http, $interval){
 		$scope.loadContent();
 		$scope.runner = $interval(function(){
 			$scope.loadContent();
-		}, 10000)
+		}, 30000)
 
 
 		$scope.$watchCollection("socialContent", function(newValue, oldValue){
@@ -58,6 +59,7 @@ app.controller("socialwallController", function($scope, $http, $interval){
 	}
 
 	$scope.loadContent = function(){
+		$scope.startLoading();
 		$scope.loadTwitter();
 		$scope.loadFlickr();
 	};
@@ -77,6 +79,10 @@ app.controller("socialwallController", function($scope, $http, $interval){
 		}
 
 		$http.jsonp(httpUrl, config).success(function(data){
+			if(typeof(data.errors) != "undefined"){
+				return false;
+			}
+
 			$scope.max_id_str = data.search_metadata.max_id_str;
 
 			for(i in data.statuses){
@@ -88,17 +94,23 @@ app.controller("socialwallController", function($scope, $http, $interval){
 					tmp_image = t.entities.media[0].media_url;
 				}
 
-				$scope.addSocialContent({
-					id: t.id_str,
-					user_name: "@" + t.user.screen_name,
-					display_name: t.user.name,
-					user_image: t.user.profile_image_url,
-					image: tmp_image,
-					time: Date.parse(t.created_at),
-					text: t.text,
-					type: "twitter",
-				})
+				console.log();
+
+				if(typeof(t.retweeted_status) === "undefined"){
+					$scope.addSocialContent({
+						id: t.id_str,
+						user_name: "@" + t.user.screen_name,
+						display_name: t.user.name,
+						user_image: t.user.profile_image_url,
+						image: tmp_image,
+						time: Date.parse(t.created_at),
+						text: $sce.trustAsHtml(t.text),
+						type: "twitter",
+					});
+				}
 			}
+
+			$scope.stopLoading();
 		});
 	};
 
@@ -130,6 +142,8 @@ app.controller("socialwallController", function($scope, $http, $interval){
 					type: "flickr",
 				})
 			}
+
+			$scope.stopLoading();
 		});
 	};
 
@@ -151,6 +165,17 @@ app.controller("socialwallController", function($scope, $http, $interval){
 			$scope.shownItems.unshift(item.type+"_"+item.id);
 		}
 	};
+
+	$scope.startLoading = function(){
+		$scope.loading = true;
+	}
+
+	$scope.stopLoading = function(){
+		clearTimeout($scope.loadingDelayer);
+		$scope.loadingDelayer = setTimeout(function(){
+			$scope.loading = false;
+		}, 10)
+	}
 });
 
 

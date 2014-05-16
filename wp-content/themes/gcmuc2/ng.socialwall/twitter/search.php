@@ -5,10 +5,10 @@ session_start();
 require_once('twitteroauth/twitteroauth.php');
 require_once('config.php');
 
-$cache_file = dirname( __FILE__ )."/cache/gcmuc_search.".session_id().".tmp";
+$cache_file = dirname( __FILE__ )."/cache/gcmuc_search.".urlencode($_GET['q']).".tmp";
 $filetime_offset = time() - 60;
 
-if(false && file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
+if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
 
 	$file_data = file_get_contents($cache_file);
 	$search_result = unserialize( stripcslashes( $file_data ) );
@@ -25,7 +25,7 @@ if(false && file_exists($cache_file) && filemtime($cache_file) > $filetime_offse
 		$_SESSION['bearerToken'] = $bearer_token;
 	}
 
-	$search_result = $connection->GET( "search/tweets", array("q" => $_GET['q'], "since_id" => $_GET['since_id']) );
+	$search_result = $connection->GET( "search/tweets", array("q" => $_GET['q'] ) );
 
 	$fhandle = fopen($cache_file, "w+");
 	fwrite($fhandle, serialize($search_result));
@@ -35,7 +35,7 @@ if(false && file_exists($cache_file) && filemtime($cache_file) > $filetime_offse
 $path = dirname( __FILE__ )."/cache/";
 if ($handle = opendir($path)) {
  while (false !== ($file = readdir($handle))) {
-    if ((time()-filectime($path.$file)) > 60 * 60 && $file != "." && $file != "..") {
+    if ((time()-filectime($path.$file)) > 60 * 60 && $file != "." && $file != ".." && $file != "block.txt") {
           unlink($path.$file);
     }
  }

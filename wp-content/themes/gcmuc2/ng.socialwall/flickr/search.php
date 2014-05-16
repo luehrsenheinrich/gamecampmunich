@@ -3,7 +3,7 @@
 /* Load required lib files. */
 session_start();
 
-$cache_file = dirname( __FILE__ )."/cache/search.".session_id().".tmp";
+$cache_file = dirname( __FILE__ )."/cache/gcmuc_search.".urlencode($_GET['q']).".tmp";
 $filetime_offset = time() - 60;
 
 if(file_exists($cache_file) && filemtime($cache_file) > $filetime_offset) {
