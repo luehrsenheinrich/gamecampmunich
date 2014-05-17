@@ -213,6 +213,85 @@ class lhThemeFunctions {
 }
 $_lh_theme_functions = new lhThemeFunctions();
 
+/**
+ * The custom walker to implement "wp_list_comments" into the bootstrap media layout
+ *
+ * @param $comment
+ * @param $args
+ * @param $depth
+ */
+function lh_comments($comment, $args, $depth){
+	
+	if($comment->user_id != 0){
+		$user = get_user_by('id', $comment->user_id);
+		$user_role = get_role(array_shift($user->roles));
+		$user_caps = $user->allcaps;		
+	}
+	
+	if(get_comment_type() == "comment" or get_comment_type() == "facebook"): ?>	
+    
+    <div <? comment_class('media')?> id="comment-<?php comment_ID() ?>">
+        <div class="comment-thumbnail pull-left">
+            <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="media-object">
+                <?=get_avatar($comment, $args['avatar_size'])?>
+                <?php if($user_caps['level_3'] == true): ?>
+                	<h4 class="staff_title">Orga</h4>
+                <?php endif; ?>
+            </a>
+            <div class="arrow-left"></div>
+        </div>
+        <div class="media-body comment-body">
+            <h4 class="media-heading author-info clearfix">
+                <?php comment_author_link() ?>
+                <span class="headline_meta pull-right">
+                    <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+                    <span class="datetime">
+						<?php
+                            /* translators: 1: date, 2: time */
+                            printf( __('%1$s at %2$s', "gcmuc"), get_comment_date(),  get_comment_time());
+                        ?>
+                    </span>
+                    <span class="datetime-phone">
+                    	<?php
+							echo get_comment_date(__("d.m.Y - H:i", "gcmuc"));
+						?>
+                    </span>
+                    </a><?php edit_comment_link(__('(Edit)', "gcmuc"),'  ','' ); ?>
+                </span>
+            </h4>
+            <div class="comment-message the_content"><?php comment_text() ?></div>
+           
+            <div class="reply">
+                <?php comment_reply_link(array_merge( $args, array('add_below' => NULL, 'depth' => $depth, 'max_depth' => $args['max_depth'], 'reply_text' => '<i class="icon-reply"></i> '.__("Reply", "gcmuc") ))); ?>
+            </div>
+        </div>
+    
+    <?php else: ?>
+    <div <? comment_class('media')?> id="comment-<?php comment_ID() ?>">
+        <div class="media-body comment-body">
+            <h4 class="media-heading author-info clearfix">
+                <?php _e("Link", "gcmuc"); ?>: <?php comment_author_link() ?>
+                <span class="headline_meta pull-right">
+                    <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+                    <span class="datetime">
+						<?php
+                            /* translators: 1: date, 2: time */
+                            printf( __('%1$s at %2$s', "gcmuc"), get_comment_date(),  get_comment_time());
+                        ?>
+                    </span>
+                    <span class="datetime-phone">
+                    	<?php
+							echo get_comment_date(__("d.m.Y - H:i", "gcmuc"));
+						?>
+                    </span>
+                    </a><?php edit_comment_link(__('(Edit)', "gcmuc"),'  ','' ); ?>
+                </span>
+            </h4>
+        </div>
+    <?php endif;
+}
+
+
 //
 // Helper Functions
 //
