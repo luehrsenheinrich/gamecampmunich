@@ -19,6 +19,13 @@ class lh_shortcodes {
 		// The SM Buttons Shortcode
 		add_shortcode( 'sm_buttons', array($this, "sm_buttons") );
 
+		// 5 und 1er
+		add_shortcode('headrow', array($this, "headrow") );
+		add_shortcode('left', array($this, "left") );
+		add_shortcode('right', array($this, "right") );
+		add_shortcode('image', array($this, "image") );
+
+
 		// Remove empty tags in shortcodes
 		remove_filter( 'the_content', 'wpautop' );
 		add_filter( 'the_content', 'wpautop' , 99);
@@ -141,15 +148,15 @@ class lh_shortcodes {
 
 
 
-	public function headrow_shortcode($atts, $content = NULL){
+	public function headrow($atts, $content = NULL){
 		return '<div class="fiveandone">' . $do_shortcode($content) . '</div';
 	}
 
-	public function left_shortcode($atts, $content = NULL){
+	public function left($atts, $content = NULL){
 		return '<div class="fiveandone-left">' . $do_shortcode($content) . '</div>';
 	}
 
-	public function right_shortcode($atts, $content = NULL){
+	public function right($atts, $content = NULL){
 		return '<div class="fiveandone-right">' . $do_shortcode($content) . '</div>';
 	}
 
