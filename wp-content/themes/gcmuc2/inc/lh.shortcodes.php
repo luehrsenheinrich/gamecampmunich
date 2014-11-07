@@ -172,11 +172,11 @@ class lh_shortcodes {
 </div>
 	*/
 	public function image($atts, $content = NULL){
-		$caption = shortcode_atts( array(
+		extract(shortcode_atts( array(
 			'untertitel' => "foobar",
-		), $atts);
+		), $atts) );
 
-		return $content . " *** " . $untertitel;
+		return $content . ' *** <h3>' . $untertitel . '</h3>';
 	}
 
 }
