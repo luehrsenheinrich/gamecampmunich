@@ -20,9 +20,9 @@ class lh_shortcodes {
 		add_shortcode( 'sm_buttons', array($this, "sm_buttons") );
 
 		// 5 und 1er
-		add_shortcode('headrow', array($this, "headrow") );
-		add_shortcode('left', array($this, "left") );
-		add_shortcode('right', array($this, "right") );
+		//add_shortcode('headrow', array($this, "headrow") );
+		//add_shortcode('left', array($this, "left") );
+		//add_shortcode('right', array($this, "right") );
 		add_shortcode('image', array($this, "image") );
 
 
@@ -147,7 +147,7 @@ class lh_shortcodes {
 
 
 
-
+/*
 	public function headrow($atts, $content = NULL){
 		return '<div class="fiveandone">' . $do_shortcode($content) . '</div';
 	}
@@ -160,7 +160,7 @@ class lh_shortcodes {
 		return '<div class="fiveandone-right">' . $do_shortcode($content) . '</div>';
 	}
 
-
+*/
 	/*
 <div id="attachment_1111" class="wp-caption alignleft">
 	<a class="lightbox" href="bild.jpg">
