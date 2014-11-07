@@ -173,7 +173,7 @@ class lh_shortcodes {
 	*/
 	public function image($atts, $content = NULL){
 		$caption = shortcode_atts( array(
-			'untertitel' => '';
+			'untertitel' => "foobar",
 		), $atts);
 
 		return $content . " *** " . $untertitel;
