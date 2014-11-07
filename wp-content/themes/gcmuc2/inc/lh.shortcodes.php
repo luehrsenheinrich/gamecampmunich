@@ -138,5 +138,39 @@ class lh_shortcodes {
 		return $html;
 	}
 
+
+
+
+	public function headrow_shortcode($atts, $content = NULL){
+		return '<div class="fiveandone">' . $do_shortcode($content) . '</div';
+	}
+
+	public function left_shortcode($atts, $content = NULL){
+		return '<div class="fiveandone-left">' . $do_shortcode($content) . '</div>';
+	}
+
+	public function right_shortcode($atts, $content = NULL){
+		return '<div class="fiveandone-right">' . $do_shortcode($content) . '</div>';
+	}
+
+
+	/*
+<div id="attachment_1111" class="wp-caption alignleft">
+	<a class="lightbox" href="bild.jpg">
+		<img class="size-full wp-image-1111" alt="$untertitel" src="bild.jpg" height="228" width="180">
+	</a>
+	<p class="wp-caption-text">
+		$untertitel
+	</p>
+</div>
+	*/
+	public function image($atts, $content = NULL){
+		$caption = shortcode_atts( array(
+			'untertitel' => '';
+		), $atts);
+
+		return $content . " *** " . $untertitel;
+	}
+
 }
 $lh_shortcodes = new lh_shortcodes();
