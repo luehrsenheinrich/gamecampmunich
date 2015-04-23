@@ -1,0 +1,33 @@
+/*!
+Theme Name: Gamecamp Munich 2015
+Theme URI: http://www.luehrsen-heinrich.de
+Description: Our very own Wordpress Boilerplate, based on experience, LESS, HTML5 Boilerplate and Twitter Bootstrap.
+Author: Hendrik Luehrsen & Volker Heinrich
+Author URI: http://www.luehrsen-heinrich.de
+Version: 6.0
+*/
+
+// Components
+@import "../bower_components/bootstrap/less/bootstrap";
+@import "../bower_components/fontawesome/less/font-awesome";
+@import (less) "../bower_components/magnific-popup/dist/magnific-popup.css";
+
+// Main LESS File
+@import "lh_variables";
+@import "main";
+.the_content {
+	@import "content";
+}
+
+// own files
+@import "header";
+
+//content templates
+@import "content-templates/ct-frontpage";
+@import "content-templates/ct-content";
+@import "content-templates/ct-schedule";
+@import "content-templates/ct-accordeon";
+@import "content-templates/ct-sponsors";
+
+// responsivness
+@import "sm/sm";
