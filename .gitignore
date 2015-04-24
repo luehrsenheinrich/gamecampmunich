@@ -1,0 +1,23 @@
+# Ignore EVERYTHING by default, we're adding everything back by hand
+/*
+!.git*
+
+# Put back in what we actually want
+!/wp-content/
+/wp-content/*
+
+# Themes
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/gcmuc_2015
+!/wp-content/themes/gcmuc
+!/wp-content/themes/gcmuc_2
+
+# Plugins
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/lh-sessions
+
+# NEVER ship node or bower modules
+node_modules
+bower_components
