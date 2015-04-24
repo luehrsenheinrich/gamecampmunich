@@ -5,6 +5,7 @@
 # Put back in what we actually want
 !/wp-content/
 /wp-content/*
+!/wp-content/gitpull
 
 # Themes
 !/wp-content/themes/
@@ -18,6 +19,7 @@
 /wp-content/plugins/*
 !/wp-content/plugins/lh-sessions
 
-# NEVER ship node or bower modules
+# NEVER ship node or bower modules and systems files
 node_modules
 bower_components
+.DS_Store
