@@ -1,0 +1,121 @@
+html .mceContentBody {
+  max-width:680px;
+  font-size:16px;
+  line-height:1.333em;
+  font-family:Helvetica, Arial, sans-serif;
+  background:#f0f0f0 url('img/gcmuc_bg.jpg');
+  font-weight:300;
+}
+a {
+  color:#f7941d;
+  text-decoration:none;
+}
+a:hover {
+  color:#f7941d;
+  text-decoration:underline;
+}
+a:active {
+  color:#ffffff;
+  text-decoration:none;
+}
+a:visited {
+  color:#f7941d;
+  text-decoration:none;
+}
+hr {
+  display:block;
+  border:none;
+  background:#f7941d;
+  width:75%;
+  height:1px;
+}
+p { margin:0 0 1em 0; }
+h1, h2, h3, h4, h5, h6 {
+  color:#000000;
+  font-weight:normal;
+  font-size:1em;
+  margin:2em 0 0 0;
+}
+h2 {
+  font-size:1.5em;
+  line-height:1.333em;
+  font-weight:bold;
+  margin:2em 0 0.5em -30px;
+  padding:0 0 0.5em 30px;
+  text-transform:uppercase;
+  border-bottom:1px solid #dddddd;
+  color:#666666;
+}
+h3 {
+  font-size:1em;
+  font-weight:bold;
+}
+h4 { font-size:0.6em; }
+h5 { font-size:0.5em; }
+h6 { font-size:0.5em; }
+ul {
+  list-style:disc outside;
+  margin:0 0 1em 2.5em;
+}
+ul li { margin:0 0 0.3em 0; }
+ol {
+  list-style:decimal inside;
+  margin:0 0 1em 1.5em;
+}
+blockquote {
+  margin:0 35px;
+  font-style:italic;
+}
+.alignleft {
+  float:left;
+  margin:0 10px 5px 0;
+  -webkit-box-shadow:0px 0px 5px #aaaaaa;
+  -moz-box-shadow:0px 0px 5px #aaaaaa;
+  box-shadow:0px 0px 5px #aaaaaa;
+}
+.alignright {
+  float:right;
+  margin:0 0 5px 10px;
+  -webkit-box-shadow:0px 0px 5px #aaaaaa;
+  -moz-box-shadow:0px 0px 5px #aaaaaa;
+  box-shadow:0px 0px 5px #aaaaaa;
+}
+.aligncenter {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  -webkit-box-shadow:0px 0px 5px #aaaaaa;
+  -moz-box-shadow:0px 0px 5px #aaaaaa;
+  box-shadow:0px 0px 5px #aaaaaa;
+}
+.alignnone {
+  display:block;
+  -webkit-box-shadow:0px 0px 5px #aaaaaa;
+  -moz-box-shadow:0px 0px 5px #aaaaaa;
+  box-shadow:0px 0px 5px #aaaaaa;
+}
+.alignnone, .alignright, .alignleft, .aligncenter {
+  max-width:100%;
+  height:auto;
+}
+.alignnone p, .alignright p, .alignleft p, .aligncenter p {
+  margin:0 !important;
+  text-align:center;
+  font-size:0.75em;
+  color:#ffffff;
+}
+img.button {
+  background:none;
+  border:none;
+}
+h4.tags {
+  margin:2em 0 0 0;
+  font-size:0.8em;
+  font-style:italic;
+}
+.youtube iframe {
+  max-width:100%;
+  width:575px !important;
+  height:354px !important;
+}

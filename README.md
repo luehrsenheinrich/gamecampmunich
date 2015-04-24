@@ -1,4 +1,0 @@
-gamecampmunich
-==============
-
-GameCamp Munich
