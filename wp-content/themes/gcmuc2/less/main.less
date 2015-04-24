@@ -1,0 +1,24 @@
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: 500px;
+  max-width: 95%;
+  margin: 20px auto;
+}
+
+form.wpcf7-form {
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="email"] {
+		.form-control();
+	}
+
+
+	textarea {
+		height: (@input-height-base*2);
+		resize: vertical;
+	}
+}
