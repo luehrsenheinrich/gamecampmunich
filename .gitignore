@@ -10,6 +10,9 @@ wp-content/wp-cache-config.php
 wp-content/gallery/
 wp-content/languages/
 wp-content/gamesdb_packshots/
+wp-includes/*
+wp-admin/*
+wp-content/*/node-modules/*
 sitemap.xml
 *.log
 *.cache
