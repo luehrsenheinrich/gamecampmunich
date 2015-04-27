@@ -2,12 +2,10 @@
 			
 			<footer>
 				<div class="container">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-nav clearfix">
-						<nav class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header-nav clearfix">
-                            <div class="container">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 single-content">
+					<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 footer-nav clearfix">
+
                                     <?php
-                                        $header_menu = array(
+                                        $footer_menu = array(
                                             'theme_location'    => 'footer_menu',
                                             'container'         => false,
                                             'menu_class'        => 'footer_menu',
@@ -17,11 +15,8 @@
                                             'link_after'      => '<i></i>',
                                             'depth'             => 2,
                                         );
-                                        wp_nav_menu($header_menu);
+                                        wp_nav_menu($footer_menu);
                                     ?>
-                                </div>
-                            </div>
-                        </nav>
                     </div>
 				</div>
 			</footer>
