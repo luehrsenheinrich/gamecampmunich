@@ -98,3 +98,10 @@ function theme_supports(){
 add_action('after_setup_theme', 'theme_supports');
 
 add_filter( 'use_default_gallery_style', '__return_false' );
+
+
+/*
+ * Images
+ */
+set_post_thumbnail_size(900, 600, true);
+add_image_size("frontpage", 1200, 675, true);

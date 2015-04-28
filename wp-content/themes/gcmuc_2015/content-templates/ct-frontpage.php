@@ -26,9 +26,16 @@ if(!is_array($ct_settings)){
 // padding-top: 66px;
 $style_tag = pickerStyles($post);
 
+if(has_post_thumbnail()){
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "frontpage");
+    $style = 'style="background-image: url('. $image .');"';
+} else {
+    $style= NULL;
+}
+
 ?>
 
-<div <? post_class("ct-wrapper ct-frontpage clearfix"); ?> id="<?=$post->post_name?>" style="background-image:url('<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>');">
+<div <? post_class("ct-wrapper ct-frontpage clearfix"); ?> id="<?=$post->post_name?>" <?=$style?>>
 	<div class="container">
 		<div class="<?=$textClasses; ?>">
 			<div class="the_content">
