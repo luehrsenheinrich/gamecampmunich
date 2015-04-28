@@ -28,7 +28,7 @@ $style_tag = pickerStyles($post);
 
 if(has_post_thumbnail()){
     $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "frontpage");
-    $style = 'style="background-image: url('. $image .');"';
+    $style = 'style="background-image: url('. $image[0] .');"';
 } else {
     $style= NULL;
 }
