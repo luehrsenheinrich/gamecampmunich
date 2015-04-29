@@ -20,33 +20,39 @@
 <body <?php body_class(); ?>>
     <div class="viewport">
         <div class="page-wrapper">
-            <header>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 logo">
-                    <div class="container">
-                        <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                            <img src="<?=WP_THEME_URL?>/img/gcmuc_logo_2015_white-opt.svg" alt="Gamecamp Munich 2015">
-                        </div>
-                        <nav class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header-nav clearfix">
-                            <div class="container">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 single-content">
-                                    <?php
-                                        $header_menu = array(
-                                            'theme_location'    => 'header_menu',
-                                            'container'         => false,
-                                            'menu_class'        => 'header-menu',
-                                            'echo'              => true,
-                                            'fallback_cb'       => false,
-                                            'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                            'link_after'      => '<i></i>',
-                                            'depth'             => 2,
-                                        );
-                                        wp_nav_menu($header_menu);
-                                    ?>
-                                </div>
-                            </div>
-                        </nav>
+            <header class="clearfix">
+                <div class="container">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 logo">
+                        <?php if(is_front_page()) { ?>
+                        	<h1 class="gcmuc-logo">
+	                        	<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" alt="<?php bloginfo('name'); ?>">
+									<img src="<?=WP_THEME_URL?>/img/gcmuc_logo_2015_white-opt.svg" alt="<?php bloginfo('name'); ?>">
+	                        	</a>
+                        	</h1>
+                        <?php } else { ?>
+                        	<div class="gcmuc-logo">
+	                        	<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" alt="<?php bloginfo('name'); ?>">
+									<img src="<?=WP_THEME_URL?>/img/gcmuc_logo_2015_white-opt.svg" alt="<?php bloginfo('name'); ?>">
+	                        	</a>
+                        	</div>
+                        <?php } ?>
                     </div>
                 </div>
+                <nav class="header-nav clearfix">
+                <?php
+                    $header_menu = array(
+                        'theme_location'    => 'header_menu',
+                        'container'         => false,
+                        'menu_class'        => 'header-menu',
+                        'echo'              => true,
+                        'fallback_cb'       => false,
+                        'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'link_after'     	=> '<i></i>',
+                        'depth'             => 2,
+                    );
+                    wp_nav_menu($header_menu);
+                ?>
+                </nav>
             </header>
             
             <div class="content-wrapper">
