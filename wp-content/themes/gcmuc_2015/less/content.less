@@ -1,4 +1,3 @@
-
 // Set the base font size
 font-size: @p-font-size;
 line-height: @p-line-height;
@@ -8,10 +7,10 @@ a {
 }
 
 p {
-	margin-bottom: @base-line-height;
+	margin-bottom: @line-height-target;
 }
 
-h1,
+h2,
 h2,
 h3,
 h4,
@@ -19,143 +18,131 @@ h5,
 h6 {
 	font-weight: normal;
 	font-size: 1em;
-	font-family: inherit;
-	line-height: 1.333em;
+	line-height: @line-height-target;
 	margin: 0;
 	padding: 0;
-	margin-left: 130px;
-	margin-right: 130px;
+	word-wrap:break-word;
 }
 
 h1 {
-	font-size: 1.8em;
-	margin-top: 1.4em;
-	margin-bottom: 0.5em;
+	font-size: @h1-font-size;
+	line-height: @h1-line-height;
+	margin-top: @h1-margin-top;
+	margin-bottom: @h1-margin-bottom;
 	color: @brandColor;
+	word-wrap:break-word;
 }
 
 h2 {
-	font-size: 1.8em;
-	margin-top: 1.4em;
-	margin-bottom: 0.5em;
+	font-size: @h2-font-size;
+	line-height: @h2-line-height;
+	margin-top: @h2-margin-top;
+	margin-bottom: @h2-margin-bottom;
 	color: @brandColor;
 }
 
 h3 {
-	font-size: 1.4em;
-	margin-top: 1em;
-	margin-bottom: 0.5em;
-	color: @brandColor;
+	font-size: @h3-font-size;
+	line-height: @h3-line-height;
+	margin-top: @h3-margin-top;
+	margin-bottom: @h3-margin-bottom;
+	color: #333;
 }
 
 h4 {
-	font-size: 1.2em;
-	margin-top: 0.8em;
-}
-
-h5 {
-	font-size: 1em;
-}
-
-h6 {
-	font-size: 0.85em;
+	font-size: @h4-font-size;
+	line-height: @h4-line-height;
+	margin-top: @h4-margin-top;
+	margin-bottom: @h4-margin-bottom;
 }
 
 
 ul {
-	font-weight: 100;
-	margin-left: 185px;
-	margin-right: 130px;
+	margin-bottom: @line-height-target;
 	list-style-position: inside;
 
 	li {
-		margin: 0 0 0.3em 0;
+		margin-bottom: @line-height-target;
 	}
 }
 
 ol {
-	font-weight: 100;
-	margin-left: 185px;
-	margin-right: 130px;
-
+	margin-bottom: @line-height-target;
+	
 	li {
-		margin: 0 0 0.3em 0;
+		margin-bottom: @line-height-target;
 	}
+}
+
+///
+dl {
+	font-size: 1em;
+    margin-top: 0;
+    margin-bottom: @line-height-target;
+}
+
+dt, dd {
+    line-height: @line-height-target;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-left: 0;
 }
 
 blockquote {
-	margin: 0 165px 1em;
+	margin: 0 0 @line-height-target @line-height-target;
+	padding: 0;
+	padding-left: 15px;
+	border-left: 1px solid rgba(0, 0, 0, 0.2);
 	font-style: italic;
+	font-size: @h4-font-size;
+	line-height: @h4-line-height;
+
+	&:before {
+		content: @fa-var-quote-left;
+		.fa();
+		position: absolute;
+		font-size: 24px;
+  		left: 0;
+	}
 }
 
-table {
-	margin: 20px 130px;
-	font-weight: 100;
-	width: 670px;
-
-	thead {
-		tr {
-			background-color: rgba(0,0,0,0.1);
-			border-bottom: 2px solid #fff;
-
-			th {
-				text-transform: uppercase;
-				font-size: 0.85em;
-			}
-		}
-	}
-
-	tbody {
-
-		tr:nth-child(odd) {
-			background-color: transparent;
-		}
-
-		tr:nth-child(even) {
-			background-color: rgba(68, 130, 196, 0.05);
-		}
-	}
+address {
+	line-height: @p-line-height;
+	margin-bottom: @p-line-height;
 }
 
 /* Images from Wordpress Media */
 
 img {
 	padding: 0;
-	margin-left: 130px;
-	margin-right: 130px;
 }
 
-img.size-large {
-	margin: 30px 0 !important;
+.size-large {
+	margin: 0 0 @line-height-target 0;
 }
 
-img.size-full {
-	margin: 30px 0 !important;
-}
-
-img.size-medium, img.size-small, img.size-thumbnail {
-	padding: 4px;
-	border: 1px dotted @brandColor;
-}
-
-img.size-medium:hover, img.size-small:hover, img.size-thumbnail:hover {
-	background-color: @brandColor;
+.size-full {
+	margin: 0 0 @line-height-target 0;
 }
 
 a img {
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+	
 }
 
 
 .alignleft {
 	float: left;
-	margin-right: 10px !important;
+	margin: @line-height-target/2 @line-height-target @line-height-target/2 0;
 }
 
 .alignright {
 	float: right;
-	margin-left: 10px !important;
+	margin: @line-height-target/2 0 @line-height-target/2 @line-height-target;
 }
 
 .aligncenter {
@@ -182,21 +169,39 @@ a img {
 .alignright p,
 .alignleft p,
 .aligncenter p {
-	margin: 0 !important;
+	margin: 0;
 	text-align: center;
 	font-size: 0.75em;
-	color: #fff;
+}
+
+.wp-caption {
+	display: table;
+	margin-bottom: @line-height-target;
+	
+	a {
+		color: @brandColor;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		margin: 0;
+	}
+
+	p.wp-caption-text {
+		display: table-caption;
+		caption-side: bottom;
+		margin: 0 !important;
+		background: #f2f2f2;
+		padding: 0 10px;
+		text-align: center;
+		font-size: 0.75em;
+	}
 }
 
 img.button {
 	background: none;
 	border: none;
-}
-
-h4.tags {
-	margin: 2em 0 0 0;
-	font-size: 0.8em;
-	font-style: italic;
 }
 
 iframe {
