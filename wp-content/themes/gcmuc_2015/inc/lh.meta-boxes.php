@@ -39,7 +39,16 @@ function lh_add_post_meta_boxes() {
     	'page',
     	'side'
     );
-
+	
+	if($page_template == 'content-templates/ct-picture_teaser.php') {
+	    add_meta_box(
+	    	'float_picture_text',
+	    	__('Textfloat', LANG_NAMEPSACE),
+	    	'float_picture_text',
+	    	'page',
+	    	'side'
+	    );
+    }
 }
 
 ///
@@ -66,7 +75,20 @@ function ct_color_picker( $object, $box ) {
 	<?php
 }
 
+function float_picture_text( $object, $box ) {
+	$float_pic_txt = get_post_meta($object->ID, '_float_picture_text', true);
+	wp_nonce_field( basename( __FILE__ ), 'lh_data_nonce' );
+	?>
+	<p><?php _e('Textfloat in image.', LANG_NAMESPACE); ?></p>
+	<p>
+		<select id="float_picture_text" class="float_picture_text" name="float_picture_text" placeholder="">
+			<option value="right" <?php selected( 'right', $float_pic_txt ); ?>>right</option>
+			<option value="left" <?php selected( 'left', $float_pic_txt ); ?>>left</option>
+		</select>
+	</p>
 
+	<?php
+}
 
 ///
 /// TOOLS	====================================
@@ -87,6 +109,7 @@ function lh_box_save( $post_id, $post ) {
 	 */
 	lh_save_post_meta($post_id, $post, 'lh_data_nonce', 'cp_bgcolor', '_cp_bgcolor');
 	lh_save_post_meta($post_id, $post, 'lh_data_nonce', 'cp_fontcolor', '_cp_fontcolor');
+	lh_save_post_meta($post_id, $post, 'lh_data_nonce', 'float_picture_text', '_float_picture_text');
 }
 
 /**

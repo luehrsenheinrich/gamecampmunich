@@ -26,12 +26,25 @@ if(!is_array($ct_settings)){
 // padding-top: 66px;
 $style_tag = pickerStyles($post);	$style_tag = NULL;
 
+if(has_post_thumbnail()){
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), "frontpage");
+    $style = 'style="background-image: url('. $image[0] .');"';
+} else {
+    $style= NULL;
+}
 
+$float = get_post_meta($post->ID, '_float_picture_text', false);
+
+if($float[0] == "right") {
+	$textClasses = "col-xs-12 col-sm-12 col-md-4 col-md-offset-6 col-lg-4 col-lg-offset-6 single-content";
+} else {
+	$textClasses = "col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2 single-content";
+}
 ?>
 
-<div <? post_class("ct-wrapper ct-content clearfix"); ?> id="<?=$post->post_name?>" <?php echo $style_tag; ?>> 
+<div <? post_class("ct-wrapper ct-content ct-picture_teaser clearfix"); ?> id="<?=$post->post_name?>" <?=$style?>> 
 	<div class="container">
-		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-content">
+		<div class="<?=$textClasses?>">
 			<h1><?php the_title(); ?></h1>
 			<div class="the_content">
 				<?php the_content(); ?>

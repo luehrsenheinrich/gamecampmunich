@@ -103,5 +103,5 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 /*
  * Images
  */
-set_post_thumbnail_size(900, 600, true);
-add_image_size("frontpage", 1200, 675, true);
+set_post_thumbnail_size(1200, 900, true);
+add_image_size("frontpage", 1600, 900, true);
