@@ -1,18 +1,30 @@
-.ct-sponsors {
+body .ct-sponsors {
+	padding: @line-height-target 0;
+	background-color: #f6f6f6;
 
 	.gallery {
 		display: table;
 		table-layout: fixed;
 		width: 100%;
 		overflow-x: hidden;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 
 		dl.gallery-item {
 			display: table-cell;
-			width: auto;
+			width: 100%;
 			float: left;
 			position: relative;
-			border:1px solid #DDD;
+			border:1px solid #eee;
 			margin: 0 10px 10px 0;
+			padding: @line-height-target;
+			text-align: center;
+			background-color: #fff;
+			
+			&:last-child {
+				margin-right: 0;
+			}
 
 			img {
 				max-height: 42px;
