@@ -60,14 +60,14 @@ class lh_shortcodes {
 	 */
 	function accordionItem_shortcode( $atts, $content = null ) {
 		$atts = shortcode_atts( array(
-			'title' => 'dude, you forgot the title :/',
-			'id' => 'titleOne',
-			'controller' => 'fotze',
+			'title' => '',
+			'id' => '',
+			'controller' => '',
 		), $atts, 'teaseritem' );
 
 		$title = $atts['title'];
-		$titleID = $atts['id'];
-		$itemController = $atts['controller'];
+		$titleID = md5($atts['title'] . "ID");
+		$itemController = md5($atts['title'] . "CONTROLLER");
 		$text = do_shortcode( $content );
 
 
