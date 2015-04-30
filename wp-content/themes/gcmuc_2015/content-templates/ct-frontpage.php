@@ -41,8 +41,15 @@ if(has_post_thumbnail()){
 			<div class="the_content">
 				<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-content">
 					<h1><?php the_title(); ?></h1>
-					<?php the_content(); ?>
+					
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ct-frontpage-content">
+		<div class="container">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+				<?php the_content(); ?>
 			</div>
 		</div>
 	</div>
