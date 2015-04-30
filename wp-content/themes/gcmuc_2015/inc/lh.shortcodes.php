@@ -116,9 +116,9 @@ class lh_shortcodes {
 		}
 
 		if($align == "left" || $align == "links") {
-			$alignClasses = 'col-xs-12 col-sm-12 col-md-5 col-lg-5 sched-left';
+			$alignClasses = 'col-xs-12 col-sm-12 col-md-5 col-lg-5 sched-left schedule';
 		} else if ($align == "right" || $align == "rechts") {
-			$alignClasses = 'col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1 sched-right';
+			$alignClasses = 'col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1 sched-right schedule';
 		} else {
 			return "vertippt?";
 		}
