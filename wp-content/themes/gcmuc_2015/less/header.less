@@ -4,6 +4,10 @@ header {
 	z-index: 100 !important;
 	position: relative;
 
+	&.vernisage {
+		background-color: @vernisage;
+	}
+
 	.gcmuc-logo {
 		overflow: hidden;
 		margin: 0;
@@ -79,7 +83,7 @@ header {
 					text-align: left;
 					a {
 						i {
-							background-color: @vernisage;
+							background-color: darken(@vernisage, 5%);
 							z-index:-1;
 							padding: (@line-height-target / 2) @line-height-target;
 							position: absolute;
@@ -92,7 +96,7 @@ header {
 
 						&:hover {
 							i {
-								background-color: darken(@vernisage, 5%);
+								background-color: darken(@vernisage, 10%);
 								.transition(all 0.3s);
 
 								&:before, &:after {
