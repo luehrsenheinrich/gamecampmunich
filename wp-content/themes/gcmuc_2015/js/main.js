@@ -28,6 +28,12 @@ $(document).ready(function(){
 				}
 				return text;
 			},
+		},
+		gallery: {
+			enabled: true,
+			tPrev: lh_var.tPrev, // title for left button
+			tNext: lh_var.tNext, // title for right button
+			tCounter: lh_var.tCounter // markup of counter
 		}
 	});
 });
