@@ -1,5 +1,5 @@
 body .ct-sponsors, body .ct-content {
-	padding: @line-height-target * 3 0;
+	padding: @line-height-target 0;
 	background-color: #f6f6f6;
 
 	.gallery {
@@ -39,9 +39,20 @@ body .ct-sponsors, body .ct-content {
 				margin: 0 auto;
 			}
 		}
+
+		&.gallery-columns-2 {
+			dl.gallery-item {
+				width: 48%;
+
+				img {
+					max-width: 270px;
+					max-height: auto;
+				}
+			}
+		}
 	}
 }
 
-body .ct-sponsors {
-	padding-top: @line-height-target * 4;
+body .ct-content {
+	padding: @line-height-target * 3;
 }
