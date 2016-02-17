@@ -1,0 +1,33 @@
+/*!
+Theme Name: L//H Wordpress Base Theme
+Theme URI: http://www.luehrsen-heinrich.de
+Description: Our very own Wordpress Boilerplate, based on experience, LESS, HTML5 Boilerplate and Twitter Bootstrap.
+Author: Luehrsen // Heinrich
+Author URI: http://www.luehrsen-heinrich.de
+Version: 1.0
+*/
+
+// Main LESS File
+@import (less) "../bower_components/normalize.css/normalize.css";
+@import "lh_variables";
+@import "mixins/mixins";
+
+// Typography - The look and feel for text
+@import "typography";
+@import "font-sizes";
+
+// The Grid
+@import "grid";
+
+// Global templates
+@import "wp-media";
+@import "main";
+@import "header";
+
+//content templates
+@import "ct/ct_main";
+
+//responsive
+//@import "sm/sm";
+//@import "md/md";
+//@import "lg/lg";
