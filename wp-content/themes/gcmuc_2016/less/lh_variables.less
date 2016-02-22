@@ -1,5 +1,5 @@
 // Color Definitions
-@brandColor:		#26b8ff;
+@brandColor:		#f7951d;
 @brandColorLight:	lighten(@brandColor, 20%);
 @brandColorDark:	darken(@brandColor, 20%);
 @textColor:			#fff;
@@ -12,11 +12,15 @@
 @xingColor: 		#126567;
 
 // Vertical Rhytm // 18px Font Size Target // 27px Line Height Target
-@font-size-target: 		18px;
-@line-height-target: 	27px;
+@font-size-target: 		14px;
+@line-height-target: 	21px;
 @scale-factor: 			1.25;
 
 @base-line-height: unit(@line-height-target / @font-size-target, em);
+
+.brandColorRGBA(@alpha) {
+	background-color: rgba(247,149,29,@alpha)
+}
 
 .fontSizeGrid(@step){
 	font-size: ceil(pow(@scale-factor, @step) * @font-size-target);

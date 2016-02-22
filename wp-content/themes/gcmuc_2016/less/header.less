@@ -1,14 +1,70 @@
 header.page-header {
-	img {
-		width:100%;
-		height:auto;
+	margin-bottom: 50px;
 
-		&:before {
+	.container {
+		position: relative;
+		overflow: hidden;
+	}
+
+	/*.logo,
+	.claim {
+		position: absolute;
+		left: 0
+		right: 0
+		top: 0;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+
+		&:before,
+		&:after {
 			content: " ";
 			position: absolute;
 			height: 200px;
 			width: 1000px;
-			background-color: rgba(255,0,0,0.4);
+			.brandColorRGBA(0.42);
+			transform: rotate(-22.5deg); //38,5
 		}
+
+		&:after {
+			.brandColorRGBA(0.62);
+			transform: rotate(-38.5deg);
+		}
+	}
+
+	.logo {
+		&:before {
+			left: -810px;
+			//left: 1;
+		}
+
+		&:after {
+			left: -650px;
+			//left: 1%;
+		}
+	}
+
+	.claim {
+		//top: auto;
+		//bottom: 0;
+
+		&:before {
+			//transform: rotate(22.5deg);
+			//left: initial;
+			right: 0;
+		}
+
+		&:after{
+			//transform: rotate(38.5deg);
+			left: auto;
+			right: 0;
+			visibility: hidden;
+		}
+	}*/
+
+	img {
+		width:100%;
+		height:auto;
+		float: left;
 	}
 }

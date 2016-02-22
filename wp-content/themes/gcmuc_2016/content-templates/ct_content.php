@@ -8,7 +8,7 @@
 global $post, $current_index, $query;
 
 
-$ct_options = array_merge(array(
+/*$ct_options = array_merge(array(
 	"font-color" 			=> null,
 	"bg-color"				=> null,
 	"margin-bottom"			=> null,
@@ -23,14 +23,14 @@ foreach($ct_options as $option => $val){
 }
 $print_styles = esc_attr(implode("; ", $styles));
 
-$mb_class = $ct_options['margin-bottom'] ? "no-margin-bottom" : null;
+$mb_class = $ct_options['margin-bottom'] ? "no-margin-bottom" : null;*/
 
 ?>
 
 <div <?php post_class("ct-wrapper ct-content clearfix " . $mb_class); ?> id="<?php echo $post->post_name; ?>">
 	<article class="container" style="<?php echo $print_styles; ?>">
 		<div class="row">
-			<div class="col-xs-12 content_wrapper">
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3 content_wrapper">
 				<div class="the_headline">
 					<h2><?php the_title(); ?></h2>
 				</div>

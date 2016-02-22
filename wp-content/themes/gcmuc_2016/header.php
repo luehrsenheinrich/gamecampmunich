@@ -22,10 +22,33 @@
         <div class="page-wrapper">
             <header class="page-header">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <img src="http://gcm.lh/wp-content/uploads/2015/04/gcmuc_foto51.jpg">
+                    <div class="row"> 
+                        <!--<div class="logo"></div>-->
+                        <div class="mask" style="position:absolute;left:0;top:0;right:0;bottom:0;height:100%;">
+                            <img src="<?php echo WP_THEME_URL; ?>/img/mask.svg">
                         </div>
+                        <img src="<?php echo get_option('header_logo'); ?>">
+                        <!--<div class="claim"></div>-->
                     </div>
                 </div>
             </header>
+            <div class="main-nav-wrapper container">
+                <div class="nav-btn-wrapper">
+                    <?php
+                        $args = array(
+                                "theme_location"    => "main_nav",
+                                'menu_class'        => 'menu clearfix main',
+                                'container'         => 'nav',
+                                'container_class'   => 'main-menu',
+                                'fallback_cb'       => false,
+                                'depth'             => 1
+                        );
+                        wp_nav_menu($args);
+                    ?>
+                    <div class="hidden-md hidden-lg nav-trigger-wrapper">
+                        <span class="nav-trigger" style="display:block;height:42px; width: 25px; background:red;">
+                            A
+                        </span>
+                    </div>
+                </div>
+            </div>

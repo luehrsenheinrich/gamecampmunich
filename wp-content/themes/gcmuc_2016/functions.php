@@ -16,7 +16,7 @@ if(!defined('WP_JS_URL')) {
 }
 
 if(!defined('LANG_NAMESPACE')){
-	define( 'LANG_NAMESPACE', "mimimi");
+	define( 'LANG_NAMESPACE', "gcm");
 }
 
 
@@ -60,3 +60,17 @@ function lh_load_theme_textdomain(){
     load_theme_textdomain(LANG_NAMESPACE, get_template_directory() . '/lang');
 }
 add_action('after_setup_theme', 'lh_load_theme_textdomain');
+
+/**
+ * lh_register_menus function.
+ *
+ * @access public
+ * @return void
+ */
+function lh_register_menus(){
+	register_nav_menus( array(
+		'main_nav' 		=> __("Main", "gcm"),
+		'footer_nav'	=> __("Footer", "gcm")
+	) );
+}
+add_action('init', 'lh_register_menus');
