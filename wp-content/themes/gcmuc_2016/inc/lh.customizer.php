@@ -62,6 +62,32 @@ class lhThemeCustomizer {
 			    )
 			)
 	    );
+
+	    // FOOTER
+		$wp_customize->add_section( 'lh_footer' , array(
+		    'title'      => __( 'Footer', "mimimi" ),
+		    'priority'   => 30,
+		) );
+
+		$wp_customize->add_setting("footer_text", array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+		));
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'footer_text',
+				array(
+		        	'label'      	=> __("The footer text", "mimimi"),
+		        	'description' 	=> __("The footer text.", "mimimi"),
+			        'section'    	=> 'lh_footer',
+			        'settings'   	=> 'footer_text',
+			        'type'			=> 'textarea'
+			    )
+			)
+	    );
 	}    
 	    
 	/*public function init_custom_header(){

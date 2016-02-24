@@ -9,7 +9,12 @@ jQuery(document).ready(function($) {
 		clearTimeout(this.scrollDelayer);
 
 		this.scrollDelayer = setTimeout( function(){
-			console.log($('nav').offset().top);
-		}, 50);
+			//console.log($('.one-page-wrapper').offset().top, $(window).scrollTop());
+			if( $(window).scrollTop() >= ( $('.one-page-wrapper').offset().top - 50) ) {
+				$('.nav-btn-wrapper').addClass('fixed');
+			} else {
+				$('.nav-btn-wrapper').removeClass('fixed');
+			}
+		}, 5);
 	});
 })

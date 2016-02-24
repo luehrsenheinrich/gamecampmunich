@@ -46,8 +46,8 @@
                         wp_nav_menu($args);
                     ?>
                     <div class="hidden-md hidden-lg nav-trigger-wrapper">
-                        <span class="nav-trigger" style="display:block;height:42px; width: 25px; background:red;">
-                            A
+                        <span class="nav-trigger">
+                            <i class="fa fa-bars"></i>
                         </span>
                     </div>
                 </div>
