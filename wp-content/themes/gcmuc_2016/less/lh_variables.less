@@ -26,21 +26,44 @@
 	background-color: rgba(0, 159, 227, @alpha);
 }
 
-.fontSizeGrid(@step){
-	font-size: ceil(pow(@scale-factor, @step) * @font-size-target);
+// Vertical Rhytm // 18px Font Size Target // 27px Line Height Target
+@font-size-target-xs: 		14px;//16px;
+@line-height-target-xs: 	21px; //24px;
+@scale-factor-xs: 			1.25;
+@base-line-height-xs: 		unit(@line-height-target-xs / @font-size-target-xs, em);
+
+@font-size-target-sm: 		14px; //18px;
+@line-height-target-sm: 	21px; //27px;
+@scale-factor-sm: 			1.25;
+@base-line-height-sm: 		unit(@line-height-target-sm / @font-size-target-sm, em);
+
+.hborder {
+	border-bottom: 2px solid #000;
 }
 
-.lineHeightGrid(@step){
-	@font-size: ceil(pow(@scale-factor, @step) * @font-size-target);
-	@line: @base-line-height / pow(@scale-factor, @step) * ((pow(@scale-factor, @step) * @font-size-target) / @font-size);
-	@line-height: @line * unit(ceil( (@font-size / @font-size-target)  / (@base-line-height) ) );
+.fontSizeGrid(@step, @size: "xs"){
+	@scale-factor: "scale-factor-@{size}";
+	@font-size-target: "font-size-target-@{size}";
+
+	font-size: ceil(pow(@@scale-factor, @step) * @@font-size-target);
+}
+
+.lineHeightGrid(@step, @size: "xs"){
+	@scale-factor: "scale-factor-@{size}";
+	@font-size-target: "font-size-target-@{size}";
+	@base-line-height: "base-line-height-@{size}";
+	@line-height-target: "line-height-target-@{size}";
+
+	@font-size: ceil(pow(@@scale-factor, @step) * @@font-size-target);
+	@line: @@base-line-height / pow(@@scale-factor, @step) * ((pow(@@scale-factor, @step) * @@font-size-target) / @font-size);
+	@line-height: @line * unit(ceil( (@font-size / @@font-size-target)  / (@@base-line-height) ) );
 
 	line-height: @line-height;
 }
 
-.verticalRhythm(@step){
-	.fontSizeGrid(@step);
-	.lineHeightGrid(@step);
+.verticalRhythm(@step, @size: "xs"){
+	.fontSizeGrid(@step, @size);
+	.lineHeightGrid(@step, @size);
 }
 
 // Font Families
