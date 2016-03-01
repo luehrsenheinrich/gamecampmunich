@@ -63,9 +63,35 @@ class lhThemeCustomizer {
 			)
 	    );
 
+	    // Newsletter
+		$wp_customize->add_section( 'nl_snippet' , array(
+		    'title'      => __( 'Newsletter', LANG_NAMESPACE ),
+		    'priority'   => 30,
+		) );
+
+		$wp_customize->add_setting("nl_code", array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+		));
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'nl_code',
+				array(
+		        	'label'      	=> __("The Newsletter Code", LANG_NAMESPACE),
+		        	'description' 	=> __("The Newsletter Code", LANG_NAMESPACE),
+			        'section'    	=> 'nl_snippet',
+			        'settings'   	=> 'nl_code',
+			        'type'			=> 'textarea'
+			    )
+			)
+	    );
+
 	    // FOOTER
 		$wp_customize->add_section( 'lh_footer' , array(
-		    'title'      => __( 'Footer', "mimimi" ),
+		    'title'      => __( 'Footer', LANG_NAMESPACE ),
 		    'priority'   => 30,
 		) );
 
@@ -80,8 +106,8 @@ class lhThemeCustomizer {
 				$wp_customize,
 				'footer_text',
 				array(
-		        	'label'      	=> __("The footer text", "mimimi"),
-		        	'description' 	=> __("The footer text.", "mimimi"),
+		        	'label'      	=> __("The footer text", LANG_NAMESPACE),
+		        	'description' 	=> __("The footer text.", LANG_NAMESPACE),
 			        'section'    	=> 'lh_footer',
 			        'settings'   	=> 'footer_text',
 			        'type'			=> 'textarea'

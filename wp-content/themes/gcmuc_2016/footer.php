@@ -4,6 +4,9 @@
 					<div class="row nl_reg">
 						<div class="xs-12">
 							<h3><?php echo get_option('footer_text'); ?></h3>
+							<div class="nl-wrapper">
+								<?php echo get_option('nl_code'); ?>
+							</div>
 						</div>
 					</div>
 					<div class="row footer_nav">
