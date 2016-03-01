@@ -32,7 +32,7 @@ $ct_options = array_merge(array(
 ?>
 
 <div <?php post_class("ct-wrapper ct-content clearfix " . $mb_class); ?> id="<?php echo $post->post_name; ?>">
-	<article class="container" style="<?php echo $print_styles; ?>" id="#<?php echo $ct_options["anchor"]; ?>">
+	<article class="container" style="<?php echo $print_styles; ?>" id="<?php echo $ct_options["anchor"]; ?>">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3 content_wrapper">
 				<div class="the_headline">
