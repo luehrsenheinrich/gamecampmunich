@@ -30,14 +30,42 @@ function lh_add_post_meta_boxes() {
 	global $post;
 	$page_template = get_post_meta( $post->ID, '_wp_page_template', true );
 	$post_format = get_post_format( $post->ID );
+	$content_template = get_post_meta( $post->ID, '_lh_content_template', true );
 	// Define the post types, in which this meta box shall appear
 
+	if($content_template == 'content-templates/ct_content.php') {
+		add_meta_box(
+			'ct_anchor',
+			__('CT Anchor', LANG_NAMESPACE),
+			'ct_anchor',
+			'page',
+			'side'
+		);
+	}
 }
 
 ///
 /// BOXES   ====================================
 ///
+function ct_anchor( $object, $box ) {
+	$award_info = (array) get_post_meta($object->ID, '_ctanchor', true);
+	$award_info_default = array(
+		"anchor"	=> isset($award_info['anchor']) ? $award_info['anchor'] : NULL
+	);
 
+	wp_nonce_field( basename( __FILE__ ), 'lh_data_nonce' );
+
+	?>
+
+	<p>
+		<strong><?php _e('CT Anchor', LANG_NAMESPACE); ?></strong>
+	</p>
+	<p>
+		<input type="text" class="widefat" id="ct-anchor" name="ctanchor[anchor]" value="<?php echo $award_info_default["anchor"]; ?>">
+	</p>
+
+	<?php
+}
 
 
 
@@ -58,6 +86,7 @@ function lh_box_save( $post_id, $post ) {
 	/*
 	 * lh_save_post_meta($post_id, $post, 'lh_data_nonce', 'post_value_name', '_meta_value_name');
 	 */
+	lh_save_post_meta($post_id, $post, 'lh_data_nonce', 'ctanchor', '_ctanchor');
 }
 
 /**

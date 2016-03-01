@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * Content Name: Plain Text
  * Description: A general purpose template to display text.
@@ -25,10 +25,14 @@ $print_styles = esc_attr(implode("; ", $styles));
 
 $mb_class = $ct_options['margin-bottom'] ? "no-margin-bottom" : null;*/
 
+$ct_options = array_merge(array(
+	"anchor"	=> null,
+), (array) get_post_meta($post->ID, "_ctanchor", true));
+
 ?>
 
 <div <?php post_class("ct-wrapper ct-content clearfix " . $mb_class); ?> id="<?php echo $post->post_name; ?>">
-	<article class="container" style="<?php echo $print_styles; ?>">
+	<article class="container" style="<?php echo $print_styles; ?>" id="#<?php echo $ct_options["anchor"]; ?>">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3 content_wrapper">
 				<div class="the_headline">
