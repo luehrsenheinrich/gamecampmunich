@@ -32,23 +32,3 @@
                     </div>
                 </div>
             </header>
-            <div class="main-nav-wrapper container">
-                <div class="nav-btn-wrapper">
-                    <?php
-                        $args = array(
-                                "theme_location"    => "main_nav",
-                                'menu_class'        => 'menu clearfix main',
-                                'container'         => 'nav',
-                                'container_class'   => 'main-menu',
-                                'fallback_cb'       => false,
-                                'depth'             => 1
-                        );
-                        wp_nav_menu($args);
-                    ?>
-                    <div class="hidden-md hidden-lg nav-trigger-wrapper">
-                        <span class="nav-trigger">
-                            <i class="fa fa-bars"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
