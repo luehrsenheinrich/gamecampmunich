@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: One Page Master
+ * Template Name: One Page Vernissage
  */
 
 define("IN_LONG_PAGE", true);
