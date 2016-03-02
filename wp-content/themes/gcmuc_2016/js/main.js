@@ -1,6 +1,5 @@
 // @depend "plugins.js"
 // @depend "../bower_components/magnific-popup/dist/jquery.magnific-popup.min.js";
-
 WebFontConfig = {
 	google: { families: [ 'Open+Sans:400,700,400italic,600,600italic,700italic:latin' ] }
 };

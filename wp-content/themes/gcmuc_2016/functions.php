@@ -16,7 +16,7 @@ if(!defined('WP_JS_URL')) {
 }
 
 if(!defined('LANG_NAMESPACE')){
-	define( 'LANG_NAMESPACE', "gcm");
+	define( 'LANG_NAMESPACE', LANG_NAMESPACE);
 }
 
 
@@ -41,9 +41,17 @@ function lh_enqueue_scripts(){
 	wp_enqueue_style('style', WP_THEME_URL.'/style.css', NULL, '1.0', 'all');
 
 	// Register Scripts used by the theme
-	wp_register_script('main', (WP_JS_URL . "/main.min.js"), array("jquery"), '1', true);
+	wp_register_script('main', (WP_JS_URL . "/main.min.js"), array("jquery"), '2', true);
 
 	wp_enqueue_script('main');
+
+	wp_localize_script('main', 'lh', array(
+		'ajaxurl'		=> admin_url('admin-ajax.php'),
+		'themeurl'		=> WP_THEME_URL,
+		'prev'			=> __("Previous (Left arrow key)", LANG_NAMESPACE),
+		'next'			=> __('Next (Right arrow key)', LANG_NAMESPACE),
+		'counter'		=> __('<span class="mfp-counter">%curr% of %total%</span>', LANG_NAMESPACE)
+	));
 }
 add_action("wp_enqueue_scripts", "lh_enqueue_scripts");
 
