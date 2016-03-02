@@ -25,7 +25,7 @@
                     <div class="row"> 
                         <!--<div class="logo"></div>-->
                         <div class="mask" style="position:absolute;left:0;top:0;right:0;bottom:0;height:100%;">
-                            <img src="<?php echo WP_THEME_URL; ?>/img/mask.svg">
+                             <a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo WP_THEME_URL; ?>/img/mask.svg"></a>
                         </div>
                         <img src="<?php echo get_option('header_logo'); ?>">
                         <!--<div class="claim"></div>-->
