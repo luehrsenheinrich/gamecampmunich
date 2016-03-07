@@ -21,7 +21,7 @@ class LHOnePage {
 	 */
 	private static $cache_expiration = 1800;
 
-	private static $_onepage_template_file = "page_templates/pt-one_page.php";
+	private static $_onepage_template_file = array("page_templates/pt-one_page.php","page_templates/pt-one_page_nonav.php","page_templates/pt-one_page_vernissage.php");
 
 	/**
 	 * Stores an md5 hash of the theme root, to function as the cache key.
@@ -148,7 +148,7 @@ class LHOnePage {
 	public function template_redirect(){
 		global $post;
 
-		if(is_page() && get_post_meta($post->post_parent, '_wp_page_template', true) == self::$_onepage_template_file && get_post_meta($post->ID, '_lh_content_template', true)){
+		if(is_page() && in_array(get_post_meta($post->post_parent, '_wp_page_template', true), self::$_onepage_template_file) && get_post_meta($post->ID, '_lh_content_template', true)){
 			wp_redirect(get_permalink($post->post_parent)."#".$post->post_name, 301);
 		}
 	}
@@ -301,7 +301,7 @@ class LHOnePage {
 		$content_template = get_post_meta( $post->ID, '_lh_content_template', true );
 		// Define the post types, in which this meta box shall appear
 
-		if($parent_template == self::$_onepage_template_file){
+		if( in_array($parent_template, self::$_onepage_template_file) ) {
 			add_meta_box(
 				"content_template_select",
 				__("Content Template", "mimimi"),
@@ -323,7 +323,7 @@ class LHOnePage {
 			}
 		}
 
-		if($page_template == self::$_onepage_template_file){
+		if( in_array($page_template, self::$_onepage_template_file) ){
 			add_meta_box(
 				"content_template_overview",
 				__("Content Templates"),
@@ -654,7 +654,7 @@ class LHOnePage {
 			$page_id = $post->ID;
 		}
 
-		return (get_post_meta($page_id, "_wp_page_template", true) == self::$_onepage_template_file);
+		return ( in_array(get_post_meta($page_id, "_wp_page_template", true), self::$_onepage_template_file) );
 	}
 
 }
