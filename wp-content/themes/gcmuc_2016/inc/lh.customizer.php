@@ -63,6 +63,25 @@ class lhThemeCustomizer {
 			)
 	    );
 
+	    // The Header Logo Setting
+		$wp_customize->add_setting("header_logo_vernissage", array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+			'type'           => 'option',
+		));
+
+		$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+				$wp_customize,
+				'header_logo',
+				array(
+		        	'label'      	=> __("Header Logo Vernissage", LANG_NAMESPACE),
+			        'section'    	=> 'lh_header',
+			        'settings'   	=> 'header_logo_vernissage',
+			    )
+			)
+	    );
+
 	    // Newsletter
 		$wp_customize->add_section( 'nl_snippet' , array(
 		    'title'      => __( 'Newsletter', LANG_NAMESPACE ),

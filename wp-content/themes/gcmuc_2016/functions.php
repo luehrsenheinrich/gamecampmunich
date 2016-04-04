@@ -77,8 +77,9 @@ add_action('after_setup_theme', 'lh_load_theme_textdomain');
  */
 function lh_register_menus(){
 	register_nav_menus( array(
-		'main_nav' 		=> __("Main", "gcm"),
-		'footer_nav'	=> __("Footer", "gcm")
+		'main_nav' 				=> __("Main", "gcm"),
+		'main_nav_vernissage'	=> __("Main Vernissage", "gcm");
+		'footer_nav'			=> __("Footer", "gcm")
 	) );
 }
 add_action('init', 'lh_register_menus');

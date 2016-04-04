@@ -27,7 +27,7 @@
                         <div class="mask" style="position:absolute;left:0;top:0;right:0;bottom:0;height:100%;">
                             <img src="<?php echo WP_THEME_URL; ?>/img/mask.svg">
                         </div>
-                        <img src="<?php echo get_option('header_logo'); ?>">
+                        <img src="<?php echo get_option('header_logo_vernissage'); ?>">
                         <!--<div class="claim"></div>-->
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="nav-btn-wrapper">
                     <?php
                         $args = array(
-                                "theme_location"    => "main_nav",
+                                "theme_location"    => "main_nav_vernissage",
                                 'menu_class'        => 'menu clearfix main',
                                 'container'         => 'nav',
                                 'container_class'   => 'main-menu',
