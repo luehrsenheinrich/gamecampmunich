@@ -26,13 +26,13 @@
                         <?php if(is_front_page()) { ?>
                         	<h1 class="gcmuc-logo">
 	                        	<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" alt="<?php bloginfo('name'); ?>">
-									<img src="<?=WP_THEME_URL?>/img/gcmuc_logo_2015_white-opt.svg" alt="<?php bloginfo('name'); ?>">
+									<img src="<?php echo get_option('header_logo'); ?>" alt="<?php bloginfo('name'); ?>">
 	                        	</a>
                         	</h1>
                         <?php } else { ?>
                         	<div class="gcmuc-logo">
 	                        	<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" alt="<?php bloginfo('name'); ?>">
-									<img src="<?=WP_THEME_URL?>/img/gcmuc_logo_2015_white-opt.svg" alt="<?php bloginfo('name'); ?>">
+									<img src="<?php echo get_option('header_logo'); ?>" alt="<?php bloginfo('name'); ?>">
 	                        	</a>
                         	</div>
                         <?php } ?>

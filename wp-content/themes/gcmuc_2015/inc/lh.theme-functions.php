@@ -27,6 +27,8 @@ class lhThemeFunctions {
 		add_filter( 'login_headertitle', 		array($this, 'lh_login_logo_url_title' ) );
 		add_filter( 'oembed_result',			array($this, 'change_oembed'), 10, 3 );
 		add_filter( 'login_errors',				array($this, 'login_errors'), 10 );
+		add_filter('mce_buttons_2',				array($this, 'lh_mce_buttons_2' ) );
+		add_filter( 'tiny_mce_before_init', 	array($this, 'lh_mce_before_init_insert_formats') ); // Attach callback to 'tiny_mce_before_init'
 	}
 
 	function lh_admin_scripts() {
@@ -235,6 +237,37 @@ class lhThemeFunctions {
 		}
 
 		return $e;
+	}
+	
+	// Custom Styles for TinyMCE
+	// Callback function to insert 'styleselect' into the $buttons array
+	function lh_mce_buttons_2( $buttons ) {
+		array_unshift( $buttons, 'styleselect' );
+		return $buttons;
+	}
+
+	// Callback function to filter the MCE settings
+	function lh_mce_before_init_insert_formats( $init_array ) {
+		// Define the style_formats array
+		$style_formats = array(
+			// Each array child is a format with it's own settings
+			array(
+				'title' => __('Button (default)', LANG_NAMESPACE),
+				'selector' => 'a',
+				'classes' => 'btn_gcmuc default',
+			),
+
+			array(
+				'title' => __('Button (secondary)', LANG_NAMESPACE),
+				'selector' => 'a',
+				'classes' => 'btn_gcmuc secondary',
+			)
+		);
+		// Insert the array, JSON ENCODED, into 'style_formats'
+		$init_array['style_formats'] = json_encode( $style_formats );
+
+		return $init_array;
+
 	}
 
 }

@@ -6,7 +6,33 @@ body {
 	}
 }
 
-
+a.btn_gcmuc {
+	display: inline-block;
+	padding: 4px 10px;
+	margin: 0 10px;
+	background-color: @brandColor;
+	border-radius: 3px;
+	min-width: 140px;
+	border: 2px solid #fff;
+	color: #fff !important;
+	text-decoration: none;
+	text-shadow: none;
+	transition: all ease 0.2s;
+	
+	&:hover {
+		border-color: darken(@brandColor, 20%);
+		color: darken(@brandColor, 30%) !important;
+	}
+	
+	&.secondary {
+		background-color: @vernisage;
+		
+		&:hover {
+			border-color: darken(@vernisage, 20%);
+			color: darken(@vernisage, 30%) !important;
+		}
+	}
+}
 
 .schedule{
 		h3 {
