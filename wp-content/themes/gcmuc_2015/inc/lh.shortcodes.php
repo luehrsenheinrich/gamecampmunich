@@ -164,7 +164,7 @@ class lh_shortcodes {
 		$atts = shortcode_atts( array(
 			'time' => NULL,
 			'title' => 'dude, you forgot the title :/',
-		), $atts, 'schedule');
+		), $atts, 'scheduleitem');
 
 		$time = $atts['time'];
 		$title = $atts['title'];
