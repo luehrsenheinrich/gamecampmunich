@@ -107,7 +107,7 @@ function theme_supports(){
 }
 add_action('after_setup_theme', 'theme_supports');
 
-add_filter( 'use_default_gallery_style', '__return_false' );
+// add_filter( 'use_default_gallery_style', '__return_false' );
 
 
 /*
