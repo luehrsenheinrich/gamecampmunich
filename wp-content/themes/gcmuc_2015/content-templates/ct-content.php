@@ -31,7 +31,7 @@ $style_tag = pickerStyles($post);
 <div <? post_class("ct-wrapper ct-content clearfix"); ?> id="<?=$post->post_name?>" <?php echo $style_tag; ?>> 
 	<div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-content">
-			<h1><?php the_title(); ?></h1>
+			<h1 class="the_title"><?php the_title(); ?></h1>
 			<div class="the_content">
 				<?php the_content(); ?>
 			</div>

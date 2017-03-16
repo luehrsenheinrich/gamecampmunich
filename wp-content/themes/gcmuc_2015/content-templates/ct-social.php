@@ -31,7 +31,7 @@ $style_tag = pickerStyles($post);
 <div <? post_class("ct-wrapper ct-content ct-social clearfix"); ?> id="<?=$post->post_name?>" <?php echo $style_tag; ?>> 
 	<div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-			<h1><?php the_title(); ?></h1>
+			<h1 class="the_title"><?php the_title(); ?></h1>
 			<div class="row social-plugin-row">
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 social-plugin">
 					<div class="fb-page" data-href="https://www.facebook.com/gamecampmunich" data-width="280" data-height="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/gamecampmunich"><a href="https://www.facebook.com/gamecampmunich">GameCamp Munich</a></blockquote></div></div>

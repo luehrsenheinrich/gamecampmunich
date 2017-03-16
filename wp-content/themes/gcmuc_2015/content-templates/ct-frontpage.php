@@ -40,7 +40,7 @@ if(has_post_thumbnail()){
 		<div class="<?=$textClasses; ?>">
 			<div class="the_content">
 				<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 single-content">
-					<h1><?php the_title(); ?></h1>
+					<h1 class="the_title"><?php the_title(); ?></h1>
 					
 				</div>
 			</div>
